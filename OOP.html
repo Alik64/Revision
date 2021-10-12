@@ -64,8 +64,30 @@
     console.log(page2.getContent())
     page2.render()
 
+    let renderPage = (state) => {
+      console.log(state)
+    }
 
+    let store = {
+      _subscriber() {
+        console.log('no subscribers (observers)')
+      },
+      _state: {
+        firstName: 'Jack',
+        lastName: 'Daniels'
+      },
+      getState() {
+        return this._state
+      },
+      subscribe(observer) {
+        this._subscriber = observer;
+      },
+      setFirstName(value) {
+        this._state.firstName = value;
+        this._subscriber()
+      }
 
+    }
 
   </script>
 </body>
