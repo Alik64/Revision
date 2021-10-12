@@ -9,6 +9,8 @@
   <style>
     body {
       background-color: #242424;
+      color: antiquewhite;
+
     }
   </style>
 </head>
@@ -16,7 +18,7 @@
 <body>
   <script>
     // Révision OOP
-
+    // objet MAN
     let man = {
       name: "Billy",
       age: 30,
@@ -27,6 +29,23 @@
     console.log(man.age)
     man.sayName()
 
+    // objet PAGE1
+
+    let page = {
+      title: 'React JS',
+      content: "",
+      render() {
+        document.title = this.title
+        document.write(this.content)
+      }
+    }
+    page.content = `<div>Content about React JS</div>`;
+    page.render()
+
+    let page2 = {
+      title: "Page 2",
+      _content: '', // Underscore indique que le propriété est privé, ne pas utiliser dirrectement
+    }
   </script>
 </body>
 
