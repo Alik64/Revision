@@ -36,16 +36,37 @@
       content: "",
       render() {
         document.title = this.title
-        document.write(this.content)
+        console.log(this.content)
       }
     }
-    page.content = `<div>Content about React JS</div>`;
+    page.content = `Content about React JS`;
     page.render()
 
     let page2 = {
       title: "Page 2",
       _content: '', // Underscore indique que le propriété est privé, ne pas utiliser dirrectement
+
+      setContent(content) {
+        this._content = content;
+      },
+      getContent() {
+        return this._content
+      },
+      render: function () {
+        document.write(this._content)
+      }
+
     }
+
+    // page2._content = `Content about ReactJS - 2 `
+    page2.setContent("Content about ReactJS - 2")
+    //console.log(page2._content)
+    console.log(page2.getContent())
+    page2.render()
+
+
+
+
   </script>
 </body>
 
