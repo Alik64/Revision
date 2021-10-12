@@ -26,8 +26,8 @@
         console.log(`my name is ${this.name}`);
       },
     };
-    console.log(man.age)
-    man.sayName()
+    console.log(man.age) // 30
+    man.sayName() // my name is Billy
 
     // objet PAGE1
 
@@ -40,7 +40,8 @@
       }
     }
     page.content = `Content about React JS`;
-    page.render()
+    page.render() // Content about React JS
+
 
     let page2 = {
       title: "Page 2",
@@ -61,7 +62,8 @@
     // page2._content = `Content about ReactJS - 2 `
     page2.setContent("Content about ReactJS - 2")
     //console.log(page2._content)
-    console.log(page2.getContent())
+    console.log(page2.getContent()) //  Content about ReactJS - 2
+
     page2.render()
 
     let renderPage = (state) => {
@@ -76,6 +78,7 @@
         firstName: 'Jack',
         lastName: 'Daniels'
       },
+
       getState() {
         return this._state
       },
@@ -86,8 +89,20 @@
         this._state.firstName = value;
         this._subscriber()
       }
-
     }
+
+    let state = store.getState() //  {firstName: 'Jack', lastName: 'Daniels'}
+    store.setFirstName('Bob')
+    state = store.getState()  // {firstName: 'Bob', lastName: 'Daniels'}
+
+
+    store.subscribe(() => {
+
+      let state = store.getState() // {firstName: 'John', lastName: 'Daniels'}
+      renderPage(state)
+    })
+    store.setFirstName('John') // {firstName: 'John', lastName: 'Daniels'}
+
 
   </script>
 </body>
