@@ -68,26 +68,8 @@
 
 
 
-        //Задание 3, 4 + 10 (Set timeOut)
+        //Задание 3, 4 ,5 + 10 (Set timeOut)
 
-        searchBtn.addEventListener('click', () => {
-            let poisk = searchBar.value
-
-            switch (poisk) {
-
-                case 'google':
-                    setTimeout(function () { alert('Yandex круче. Но это не точно'); }, 3000)
-
-                    break
-                default:
-                    setTimeout(function () { alert(poisk + searchItems[0].name); }, 3000)
-
-
-
-            }
-
-        })
-        // Задание 5
 
         const searchItems = [
             {
@@ -107,6 +89,24 @@
                 age: 34
             },
         ]
+        searchBtn.addEventListener('click', () => {
+            let poisk = searchBar.value
+
+            switch (poisk) {
+
+                case 'google':
+                    setTimeout(function () { alert('Yandex круче. Но это не точно'); }, 3000)
+
+                    break
+                default:
+                    setTimeout(function () { alert(poisk + " " + searchItems[0].name); }, 3000)
+
+
+
+            }
+
+        })
+
         // Задание 6 
 
         function superSum(first, second) {
