@@ -63,6 +63,32 @@
     <script>
         const searchBtn = document.querySelector('.search_btn')
         const searchBar = document.querySelector('.searchBar')
+
+
+
+
+
+        //Задание 3, 4 + 10 
+
+        searchBtn.addEventListener('click', () => {
+            let poisk = searchBar.value
+
+            switch (poisk) {
+
+                case 'google':
+                    setTimeout(function () { alert('Yandex круче. Но это не точно'); }, 3000)
+
+                    break
+                default:
+                    setTimeout(function () { alert(poisk + searchItems[0].name); }, 3000)
+
+
+
+            }
+
+        })
+        // Задание 5
+
         const searchItems = [
             {
                 name: "Paul",
@@ -81,6 +107,13 @@
                 age: 34
             },
         ]
+        // Задание 6 
+
+        function superSum(first, second) {
+            alert(`Сумма ${first} и ${second} равна ${first + second}`)
+
+        }
+        // Задание 7
         const randomNumbers = [234, 999, 45, 8, 57, 9, 494, 49]
         for (var i = 0; i < randomNumbers.length; i++) {
             for (var j = 0; j < randomNumbers.length; j++) {
@@ -94,32 +127,22 @@
         console.log("Наибольшее число " + randomNumbers[0])
         console.log("Наименьшее число " + randomNumbers[randomNumbers.length - 1])
 
+        // Задание 8
+
         let a = "какой-то текст";
         let b = 256;
 
         [a, b] = [b, a]
         console.log(a, b)
 
+        // Задание 9
 
-        function superSum(first, second) {
-            alert(`Сумма ${first} и ${second} равна ${first + second}`)
-
+        function findMax(arr) {
+            return Math.max.apply(null, arr)
         }
+        let randomArr = [555, 99, 3, 54, 65, 43, 56, 43, 2, 3]
+        console.log(findMax(randomArr))
 
-        searchBtn.addEventListener('click', () => {
-            let poisk = searchBar.value
-
-            switch (poisk) {
-
-                case 'google':
-                    alert('Yandex круче. Но это не точно')
-                    break
-                default:
-                    alert(poisk + searchItems[0].name)
-
-            }
-
-        })
 
     </script>
 </body>
