@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shmoogle</title>
+    <style>
+        *,
+        ::before,
+        ::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .search_wrapper {
+            height: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .search_content {
+            text-align: center;
+        }
+
+        .search_content>* {
+            margin-bottom: 10px;
+        }
+
+        .searchBar {
+            border: 1px solid #FF0000;
+            border-radius: 5px;
+            padding: 10px 20px;
+            min-width: 300px
+        }
+
+        .search_btn {
+            background-color: #2aae2a;
+            border: 1px solid #808080;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search_wrapper">
+        <div class="search_content">
+            <div class="search_bar">
+                <input type="text" name="searchBar" id="searchBar" class="searchBar" placeholder="Найдется всё">
+            </div>
+            <div>
+                <button class="search_btn">Найти</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
