@@ -63,6 +63,26 @@
     <script>
         const searchBtn = document.querySelector('.search_btn')
         const searchBar = document.querySelector('.searchBar')
+        const searchItems = [
+            {
+                name: "Paul",
+                age: 18
+            },
+            {
+                name: "Josette",
+                age: 78
+            },
+            {
+                name: "John",
+                age: 35
+            },
+            {
+                name: "Marie",
+                age: 34
+            },
+        ]
+
+
 
         searchBtn.addEventListener('click', () => {
             let poisk = searchBar.value
@@ -73,7 +93,8 @@
                     alert('Yandex круче. Но это не точно')
                     break
                 default:
-                    alert(poisk)
+                    alert(poisk + searchItems[0].name)
+
             }
 
         })
