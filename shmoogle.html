@@ -60,7 +60,25 @@
         </div>
 
     </div>
+    <script>
+        const searchBtn = document.querySelector('.search_btn')
+        const searchBar = document.querySelector('.searchBar')
 
+        searchBtn.addEventListener('click', () => {
+            let poisk = searchBar.value
+
+            switch (poisk) {
+
+                case 'google':
+                    alert('Yandex круче. Но это не точно')
+                    break
+                default:
+                    alert(poisk)
+            }
+
+        })
+
+    </script>
 </body>
 
 </html>
