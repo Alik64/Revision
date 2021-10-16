@@ -81,6 +81,20 @@
                 age: 34
             },
         ]
+        const randomNumbers = [234, 999, 45, 8, 57, 9, 494, 49]
+        for (var i = 0; i < randomNumbers.length; i++) {
+            for (var j = 0; j < randomNumbers.length; j++) {
+                if (randomNumbers[j] < randomNumbers[j + 1]) {
+                    let tmp = randomNumbers[j + 1];
+                    randomNumbers[j + 1] = randomNumbers[j];
+                    randomNumbers[j] = tmp;
+                }
+            }
+        }
+        console.log("Наибольшее число " + randomNumbers[0])
+        console.log("Наименьшее число " + randomNumbers[randomNumbers.length - 1])
+
+
 
         function superSum(first, second) {
             alert(`Сумма ${first} и ${second} равна ${first + second}`)
