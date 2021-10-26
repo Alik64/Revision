@@ -50,8 +50,18 @@
     b.students.push('Mary')
     console.log(a.students) // ['Ivan', 'Andrew', 'John', 'Mary'] car Shallow copy
 
-    console.log(a === b, {} === {}) // false, false
+    console.log(a === b, {} === {}) // false, false - car c'est deux objets differents
+    console.log(a.students === b.students) // true - car c'est le même objet  
+
     // Deep copy
+    b.classroom = { ...a.classroom }
+    b.classroom.teacher = { ...a.classroom.teacher }
+    b.students = [...a.students]
+
+    b.classroom.teacher.name = 'Bob'
+    console.log(b.classroom.teacher.name) // Bob 
+    console.log(a.classroom.teacher.name) // Mariya-Ivanovna  
+    console.log(a.classroom === b.classroom) // false
 
 
   </script>
