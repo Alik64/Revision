@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Copy vs Shallow Copy</title>
+  <style>
+    body {
+      background-color: #242424;
+      color: antiquewhite;
+
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var a = {
+      name: 'My-React-project',
+      protocol: 'https',
+      maxStudentsCount: 10,
+      isOnLine: true,
+      students: ['Ivan', 'Andrew', 'John'],
+      classroom: {
+        teacher: {
+          name: 'Mariya-Ivanovna',
+          age: 72
+        }
+      }
+    }
+
+    //  Shallow copy
+    // La Copie de primitifs (num, string, bool etc)
+    // les objets  inclus ne sont pas copié
+
+    var b = {
+      ...a
+    }
+    console.log(b) //{name: 'My-React-project', protocol: 'https', maxStudentsCount: 10, isOnLine: true, students: Array(3), …}
+
+    // Deep copy
+
+
+  </script>
+</body>
+
+</html>
