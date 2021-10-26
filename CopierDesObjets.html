@@ -33,13 +33,24 @@
 
     //  Shallow copy
     // La Copie de primitifs (num, string, bool etc)
-    // les objets  inclus ne sont pas copié
+    // les objets  inclus ne sont pas copié, modifié en B sont modifié en A(students, teacher etc)
 
     var b = {
       ...a
     }
     console.log(b) //{name: 'My-React-project', protocol: 'https', maxStudentsCount: 10, isOnLine: true, students: Array(3), …}
 
+    b.name = 'Victor'
+    console.log(b.name, a.name) // Victor My-React-project
+
+    b.isOnLine = false
+    console.log(a.isOnLine, b.isOnLine) // true false
+
+    // ATTENTION 
+    b.students.push('Mary')
+    console.log(a.students) // ['Ivan', 'Andrew', 'John', 'Mary'] car Shallow copy
+
+    console.log(a === b, {} === {}) // false, false
     // Deep copy
 
 
