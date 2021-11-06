@@ -11,7 +11,11 @@ var a = 5;
 
 $.ajax("https://repetitora.net/api/js/Images", {
   success: (data) => {
-    console.log(data);
+    data.forEach((el) => {
+      const img = document.createElement("img");
+      img.src = el.thumbnail;
+      document.body.appendChild(img);
+    });
   },
 });
 
