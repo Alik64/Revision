@@ -9,7 +9,11 @@ function makeRequest() {
 
 var a = 5;
 
-$.ajax("https://repetitora.net/api/js/Images");
+$.ajax("https://repetitora.net/api/js/Images", {
+  success: (data) => {
+    console.log(data);
+  },
+});
 
 a = 6;
 console.log(a);
