@@ -2,7 +2,7 @@ const resultBlock = document.querySelector("#result");
 const clickMeButton = document.querySelector("#clickMe");
 const pageNumber = document.querySelector("#page-number");
 
-function successCallback(data) {
+function onDataReceived(data) {
   data.forEach((el) => {
     const img = document.createElement("img");
     img.src = el.thumbnail;
@@ -11,5 +11,5 @@ function successCallback(data) {
 }
 
 clickMeButton.addEventListener("click", () => {
-  getImages(pageNumber.value, successCallback);
+  getImages(pageNumber.value, onDataReceived);
 });
