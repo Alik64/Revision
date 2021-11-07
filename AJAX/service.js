@@ -1,5 +1,5 @@
-function makeRequest() {
-  $.ajax(`https://repetitora.net/api/js/Images?page=${pageNum.value}&count=1`, {
+function getImages(pageNumber) {
+  $.ajax(`https://repetitora.net/api/js/Images?page=${pageNumber}&count=1`, {
     success: (data) => {
       data.forEach((el) => {
         const img = document.createElement("img");
