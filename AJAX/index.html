@@ -14,9 +14,16 @@
 
         }
 
-        .center {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .center,
+        .left {
             border: 1px solid #fff;
             padding: 50px;
+            margin: 50px;
             display: grid;
             place-items: center;
         }
@@ -28,11 +35,21 @@
 </head>
 
 <body>
-    <div class="center">
-        Numéro de page : <input type="number" value="" id="page-number">
-        <button id="clickMe">Click me</button>
-        <div id="result"></div>
+    <div class="wrapper">
+        <div class="left">
+            <h1>Left</h1>
+            Numéro de page : <input type="number" value="" id="page-number-left">
+            <button id="ajoutImage">Ajouter une image</button>
+            <div id="homeWork"></div>
+        </div>
+        <div class="center">
+            <h1>Right</h1>
+            Numéro de page : <input type="number" value="" id="page-number">
+            <button id="clickMe">Click me</button>
+            <div id="result"></div>
+        </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
