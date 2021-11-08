@@ -17,10 +17,10 @@
         .wrapper {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .center,
-        .left {
+        .decoration {
             border: 1px solid #fff;
             padding: 50px;
             margin: 50px;
@@ -28,25 +28,31 @@
             place-items: center;
         }
 
-        .center>* {
+        .decoration>* {
             margin: 20px;
+            background-size: ;
         }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="left">
-            <h1>Left</h1>
-            Numéro de page : <input type="number" value="" id="page-number-left">
+        <div class="un decoration">
+            <h1>1</h1>
+            <span> Numéro de page : </span><input type="number" value="" id="page-number-one">
             <button id="ajoutImage">Ajouter une image</button>
             <div id="homeWork"></div>
         </div>
-        <div class="center">
-            <h1>Right</h1>
-            Numéro de page : <input type="number" value="" id="page-number">
+        <div class="deux decoration">
+            <h1>2</h1>
+            <span>Numéro de page : </span> <input type="number" value="" id="page-number-two">
             <button id="clickMe">Click me</button>
             <div id="result"></div>
+        </div>
+        <div class="trois decoration">
+            <h1>3</h1>
+            <span>Numero de page :</span> <input type="number" name="" id="page-number-three">
+            <button id="changeFond">Changer le fond</button>
         </div>
     </div>
 
