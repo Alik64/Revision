@@ -11,7 +11,8 @@ function onDataReceived(data) {
 }
 
 clickMeButton.addEventListener("click", () => {
-  getImages(pageNumberTwo.value, onDataReceived);
+  const promise = getImages(pageNumberTwo.value);
+  promise.then(onDataReceived);
 });
 
 // Home work
@@ -29,7 +30,8 @@ function ajoutImages(data) {
 }
 
 ajoutImage.addEventListener("click", () => {
-  getImages(pageNumberOne.value, ajoutImages);
+  const promise = getImages(pageNumberOne.value);
+  promise.then(ajoutImages);
 });
 
 // Home work
@@ -49,5 +51,6 @@ function fondChanger(data) {
 }
 
 changeFond.addEventListener("click", () => {
-  getImages(pageNumberThree.value, fondChanger);
+  const promise = getImages(pageNumberThree.value);
+  promise.then(fondChanger);
 });
