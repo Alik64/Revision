@@ -17,19 +17,27 @@
 
 <body>
     <script>
+        let prom = doItAfter(2)
+
+        prom.then((message) => console.log(message))
+
+
         function doItAfter(seconds) {
             let promise = new Promise((resolve, reject) => {
 
 
                 setTimeout(() => {
-                    resolve()
+                    resolve("i'am a message in promise")
                 }, seconds * 1000)
 
             })
             return promise
         }
-        doItAfter(2)
-            .then(() => console.log("promise resolved"))
+
+
+
+
+
 
     </script>
 </body>
