@@ -1,6 +1,8 @@
+// Ajouter l'image
+
 const resultBlock = document.querySelector("#result");
 const clickMeButton = document.querySelector("#clickMe");
-const pageNumberOne = document.querySelector("#page-number-one");
+const pageNumberOne = document.querySelector("#pageNumber-one");
 
 function onDataReceived(data) {
   data.forEach((el) => {
@@ -11,34 +13,26 @@ function onDataReceived(data) {
 }
 
 clickMeButton.addEventListener("click", () => {
-  const promise = getImages(pageNumberTwo.value);
+  const promise = getImages(pageNumberOne.value);
   promise.then(onDataReceived);
 });
 
-// Home work
+// Ajouter l'image
 // 2
-const ajoutImage = document.querySelector("#ajoutImage");
+const getTaskBtn = document.querySelector("#get-tasks");
 const divHomeWork = document.querySelector("#homeWork");
-const pageNumberTwo = document.querySelector("#page-number-two");
+const pageNumberTwo = document.querySelector("#pageNumber-two");
 
-function ajoutImages(data) {
-  data.forEach((image) => {
-    const img = document.createElement("img");
-    img.src = image.thumbnail;
-    divHomeWork.appendChild(img);
-  });
-}
-
-ajoutImage.addEventListener("click", () => {
-  const promise = getImages(pageNumberOne.value);
-  promise.then(ajoutImages);
+getTaskBtn.addEventListener("click", () => {
+  const promise = getTasks();
+  promise.then(onDataReceived);
 });
 
-// Home work
+// Changer de fond de DIV
 // 3
 const divThree = document.querySelector(".trois");
 const changeFond = document.querySelector("#changeFond");
-const pageNumberThree = document.querySelector("#page-number-three");
+const pageNumberThree = document.querySelector("#pageNumber-three");
 
 function fondChanger(data) {
   data.forEach((photo) => {
