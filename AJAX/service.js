@@ -20,7 +20,16 @@ function getTasks(pageNumber) {
   const promise = axios.get(
     `https://repetitora.net/api/JS/Tasks?widgetId=0130`
   );
+  return promise.then((response) => {
+    return response.data;
+  });
+}
 
+function createTask(title) {
+  const promise = axios.post(`https://repetitora.net/api/JS/Tasks`, {
+    widgetId: 0130,
+    title: title,
+  });
   return promise.then((response) => {
     return response.data;
   });
