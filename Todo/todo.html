@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body {
+            background-color: #242424;
+            color: #fff;
+
+        }
+
+        .center {
+            display: grid;
+            place-items: center;
+        }
+
+        .wrapper {
+            border: 1px solid #fff;
+            margin: 20px;
+            padding: 40px 60px;
+        }
+
+        .wrapper>* {
+            margin-bottom: 20px;
+        }
+
+        .line {
+            display: flex;
+        }
+
+        .line>* {
+            margin: 0px 20px;
+        }
+
+        .line button {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <div class="wrapper center">
+        <div>
+            <input type="text" name="task" id="inputTask">
+        </div>
+        <div>
+            <button type="submit" id="addTaskButton">New task</button>
+        </div>
+        <ul id="tasks"></ul>
+    </div>
+    <script>
+
+        const taskTitle = document.querySelector('#inputTask')
+        const addTaskButton = document.querySelector('#addTaskButton')
+        const tasks = document.querySelector('#tasks')
+        const closeBtns = []
+
+        taskTitle.addEventListener("keydown", function (e) {
+            if (e.code === "Enter") {
+                addTask(taskTitle.value);
+            }
+        });
+
+        addTaskButton.addEventListener('click', () => { addTask(taskTitle.value) })
+
+
+        function addTask(text) {
+
+            const li = document.createElement("li")
+            li.innerHTML = text;
+            const button = document.createElement('button')
+            button.className = "close"
+            button.innerHTML = 'X'
+            const div = document.createElement('div')
+            div.className = 'line'
+
+            div.appendChild(li)
+            div.appendChild(button)
+            tasks.appendChild(div)
+
+            taskTitle.value = ""
+
+            closeBtns.push(button)
+            closeBtns.forEach((button) => {
+                button.addEventListener('click', (e) => {
+                    let task = e.target.parentElement
+                    task.remove()
+                })
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
