@@ -16,9 +16,9 @@ function getImages(pageNumber) {
   });
 }
 
-function getTasks(pageNumber) {
+function getTasks(taskName) {
   const promise = axios.get(
-    `https://repetitora.net/api/JS/Tasks?widgetId=0130`
+    `https://repetitora.net/api/JS/Tasks?widgetId=090909&page=30`
   );
   return promise.then((response) => {
     return response.data;
@@ -27,7 +27,7 @@ function getTasks(pageNumber) {
 
 function createTask(title) {
   const promise = axios.post(`https://repetitora.net/api/JS/Tasks`, {
-    widgetId: 0130,
+    widgetId: 090909,
     title: title,
   });
   return promise.then((response) => {

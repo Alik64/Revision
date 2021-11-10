@@ -22,6 +22,7 @@ clickMeButton.addEventListener("click", () => {
 const getTaskBtn = document.querySelector("#get-tasks");
 const taskResult = document.querySelector("#task-result");
 const inputTask = document.querySelector("#inputTask");
+
 function onTasksReceived(tasks) {
   tasks.forEach((el) => {
     const li = document.createElement("li");
@@ -35,9 +36,6 @@ getTaskBtn.addEventListener("click", () => {
   promise.then(onTasksReceived);
 });
 
-createTask("learn pyton").then((data) => {
-  console.log(data.task.title);
-});
 // Changer de fond de DIV
 // 3
 const divThree = document.querySelector(".trois");
