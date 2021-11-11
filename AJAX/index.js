@@ -19,15 +19,20 @@ clickMeButton.addEventListener("click", () => {
 
 // Ajouter des tasks
 // 2
+
 const getTaskBtn = document.querySelector("#get-tasks");
-const taskResult = document.querySelector("#task-result");
+const result = document.querySelector("#task-result");
 const inputTask = document.querySelector("#inputTask");
 
+createTask("learn how to put HTML");
+deleteTask("fa9f6dd8-ebcf-495b-9956-26cd93ea6856");
 function onTasksReceived(tasks) {
+  result.innerHTML = "";
   tasks.forEach((el) => {
     const li = document.createElement("li");
     li.innerHTML = el.title;
-    taskResult.appendChild(li);
+    li.dataset.id = el.id;
+    result.appendChild(li);
   });
 }
 
