@@ -23,24 +23,36 @@ clickMeButton.addEventListener("click", () => {
 const getTaskBtn = document.querySelector("#get-tasks");
 const result = document.querySelector("#task-result");
 const inputTask = document.querySelector("#inputTask");
+const addTaskBtn = document.querySelector("#add-tasks");
 
-createTask("learn how to put HTML");
-deleteTask("fa9f6dd8-ebcf-495b-9956-26cd93ea6856");
+addTaskBtn.addEventListener("click", () => {
+  createTask(inputTask.value);
+});
+
+//updateTask("Learn React", "aa560ab3-c139-4be8-a634-069a6fa9d7be");
+//deleteTask("1221d661-17a7-47d7-9ec1-00f21906c338");
+
 function onTasksReceived(tasks) {
   result.innerHTML = "";
   tasks.forEach((el) => {
     const li = document.createElement("li");
     li.innerHTML = el.title;
     li.dataset.id = el.id;
+
     result.appendChild(li);
   });
 }
 
-getTaskBtn.addEventListener("click", () => {
+// getTaskBtn.addEventListener("click", () => {
+//   const promise = getTasks();
+//   promise.then(onTasksReceived);
+// });
+
+function taskRender() {
   const promise = getTasks();
   promise.then(onTasksReceived);
-});
-
+}
+taskRender();
 // Changer de fond de DIV
 // 3
 const divThree = document.querySelector(".trois");
