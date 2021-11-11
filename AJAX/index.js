@@ -29,7 +29,7 @@ addTaskBtn.addEventListener("click", () => {
   createTask(inputTask.value);
 });
 
-//updateTask("Learn React", "aa560ab3-c139-4be8-a634-069a6fa9d7be");
+updateTask("Learn React", "aa560ab3-c139-4be8-a634-069a6fa9d7be", true);
 //deleteTask("1221d661-17a7-47d7-9ec1-00f21906c338");
 
 function onTasksReceived(tasks) {

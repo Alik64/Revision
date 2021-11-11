@@ -38,11 +38,12 @@ function createTask(title) {
 }
 
 // PUT
-function updateTask(title, id) {
+function updateTask(title, id, done) {
   const promise = axios.put(`https://repetitora.net/api/JS/Tasks`, {
     widgetId: 090909,
     title: title,
     taskId: id,
+    done: done,
   });
   return promise.then((response) => {
     return response.data;
