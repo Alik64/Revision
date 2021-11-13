@@ -18,13 +18,13 @@ class Man {
     );
   }
 }
-
+<Man name="samurai" age={31} />;
 let m2 = new Man("Bob", 56);
 
 // Классовая компонента
-class ManC {
+class ManC extends React.Component {
   constructor(props) {
-    this.props = props;
+    super(props);
   }
   render() {
     return (
@@ -36,10 +36,8 @@ class ManC {
   }
 }
 
-<Man name="samurai" age={31} />;
-
 // React видит что это class Man {...} и делает следущее
 
-let m1 = new Man("John", 24);
+let m1 = new ManC("John", 24);
 let jsx = m1.render();
 //
