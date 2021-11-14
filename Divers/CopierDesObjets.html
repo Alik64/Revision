@@ -63,6 +63,19 @@
     console.log(a.classroom.teacher.name) // Mariya-Ivanovna  
     console.log(a.classroom === b.classroom) // false
 
+    // JSON
+
+    let user = {
+      firstName: "Vasiliy",
+      name: "Pupkin",
+      adress: {
+        city: "Moscow",
+        country: "Russia"
+      }
+    }
+    let copyUser = JSON.parse(JSON.stringify(user))
+    console.log(user)
+    console.log(copyUser)
 
   </script>
 </body>
