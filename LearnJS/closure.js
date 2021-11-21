@@ -35,3 +35,15 @@ alert(counter.up()); // 1
 alert(counter.up()); // 2
 alert(counter.down()); // 1
 
+// 3 
+let phrase = "Hello";
+
+if (true) {
+    let user = "John";
+
+    function sayHi() {
+        alert(`${phrase}, ${user}`);
+    }
+}
+
+sayHi(); // error
