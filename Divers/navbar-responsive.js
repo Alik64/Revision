@@ -20,3 +20,11 @@ window.addEventListener('resize', () => {
     }
 
 })
+
+//  pour fermer le menu deroulant à chaque fois qu'on clique sur le lien
+
+lien.forEach((link) => {
+    link.addEventListener("click", function () {
+        nav.classList.remove("mobile");
+    });
+});
