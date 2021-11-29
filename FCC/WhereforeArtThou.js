@@ -15,12 +15,21 @@ if the first argument is [
     because it contains the name and its value, that was passed on as the second argument. */
 
 function whatIsInAName(collection, source) {
-    const arr = [];
-    // Only change code below this line
+
+    let srcKeys = Object.keys(source);
 
 
-    // Only change code above this line
-    return arr;
+    return collection.filter(function (obj) {
+        for (var i = 0; i < srcKeys.length; i++) {
+            if (
+                !obj.hasOwnProperty(srcKeys[i]) ||
+                obj[srcKeys[i]] !== source[srcKeys[i]]
+            ) {
+                return false;
+            }
+        }
+        return true;
+    });
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
