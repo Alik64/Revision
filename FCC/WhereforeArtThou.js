@@ -18,7 +18,6 @@ function whatIsInAName(collection, source) {
 
     let srcKeys = Object.keys(source);
 
-
     return collection.filter(function (obj) {
         for (var i = 0; i < srcKeys.length; i++) {
             if (
