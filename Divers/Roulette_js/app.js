@@ -7,7 +7,6 @@ stopBtn.addEventListener("click", stop);
 let count = 45
 let intervalEx
 
-
 function start() {
     if (!intervalEx) {
         intervalEx = setInterval(rotate, 1000)
