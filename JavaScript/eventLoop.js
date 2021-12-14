@@ -36,7 +36,7 @@ secondFunction()
 
 
 console.log('start')
-const btn = document.getElementById('btn')
+//const btn = document.getElementById('btn')
 
 function foo() {
     setTimeout(function callback() {
@@ -45,11 +45,11 @@ function foo() {
     console.log('hello from foo()')
 }
 
-btn.addEventListener('click', foo)
+// btn.addEventListener('click', foo)
 
 foo()
 
-console.log('end')
+console.log('end') // 'start' 'hello from foo()' 'end' 'hello from setTimeout'
 
 
 
