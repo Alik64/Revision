@@ -54,3 +54,26 @@ function count() {
 }
 
 count();
+
+// 3 
+
+setTimeout(function timeout() {
+    console.log('Таймаут');
+}, 0);
+
+let p = new Promise(function (resolve, reject) {
+    console.log('Создание промиса');
+    resolve();
+});
+
+p.then(function () {
+    console.log('Обработка промиса');
+});
+
+console.log('Конец скрипта');
+/*
+1.Создание промиса
+2.Конец скрипта
+3.Обработка промиса
+4.Таймаут
+ */
