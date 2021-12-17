@@ -14,6 +14,9 @@ export default function RandomUser() {
             .then(({ data }) => {
                 console.log(data)
                 return data
+            }).then(data => {
+                setUserInfo(data.results)
+                console.log(userInfo)
             })
 
             .catch(err => {
@@ -28,13 +31,13 @@ export default function RandomUser() {
         const { name: { first, last } } = userInfo
         return `${first} ${last}`;
     }
+    const getUserPhoto = (userInfo) => {
+        const { picture: { large } } = userInfo
+        return `${large}`
+    }
     console.log(userInfo)
 
-    useEffect(() => {
-        getRandomUser().then(data => {
-            setUserInfo(data.results)
-        })
-    }, [])
+
 
 
     return (
@@ -42,6 +45,7 @@ export default function RandomUser() {
             {
                 userInfo.map((data, index) => (
                     <div key={index}>
+                        <img src={getUserPhoto(data)} alt="" />
                         <p>{getUserName(data)}</p>
                     </div>
                 )
