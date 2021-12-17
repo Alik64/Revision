@@ -9,16 +9,18 @@ export default function Counter(props) {
         setCount(count + 1)
 
     }
-    const onIncrement = () => {
-        setCount(count + 1)
+    const onDecrement = () => {
+        setCount(count - 1)
 
     }
 
     return (
         <div>
             <h1>{count}</h1>
-            <button onClick={() => onIncrement()}>Click me</button>
-            <button onClick={() => onDecrement()}>Click me</button>
-        </div>
+            <button onClick={() => onIncrement()}>+</button>
+            <button
+                onClick={() => onDecrement()}
+                disabled={count === 0} >-</button>
+        </div >
     )
 }
