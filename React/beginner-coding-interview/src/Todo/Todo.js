@@ -4,15 +4,9 @@ import Form from './Form'
 function Todo(props) {
 
     const [todos, setTodos] = useState([])
-    const toggleComplete = index => {
-        setTodos(todos.map((todo, curent) =>
-            curent === index
-                ? {
-                    ...todo,
-                    complete: !todo.complete
-                }
-                : todo
-        ))
+    const toggleComplete = (i) => {
+        todos[i].complete = !todos[i].complete
+        setTodos([...todos])
     }
     console.log(todos)
     return (
