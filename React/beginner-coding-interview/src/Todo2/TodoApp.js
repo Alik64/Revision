@@ -40,7 +40,7 @@ export default function TodoApp() {
                     .map(({ text, id }) =>
                         <li onClick={() => onClick(id)} key={uuidv4()}>{text}</li>)}
             </ul>
-            <h2>Taches effectué</h2>
+            <h2>Taches terminées</h2>
             <ul>
                 {tasks.filter(objet => objet.fait === true)
                     .map((task) =>
