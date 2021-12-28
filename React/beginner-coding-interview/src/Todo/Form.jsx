@@ -2,22 +2,33 @@ import React, { useState } from 'react'
 
 
 const useInputValue = initialValue => {
+
+
     const [value, setValue] = useState(initialValue)
+
 
     return {
         value,
-        onChange: (e) => setValue(e.target.value)
+        onChange: (e) => setValue(e.target.value),
+        resetValue: () => setValue('')
     }
 }
 
-export default function Form() {
-    const text = useInputValue("hello")
+export default function Form({ onSubmit }) {
+    const { resetValue, ...text } = useInputValue("")
 
 
 
     return (
-        <div>
-            <input {...text} />
-        </div>
+        <form onSubmit={e => {
+            e.preventDefault()
+            onSubmit(text.value);
+            resetValue()
+        }}>
+            <div>
+                <input {...text} /> <button>Add</button>
+            </div>
+
+        </form>
     )
 }
