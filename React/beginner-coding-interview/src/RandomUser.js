@@ -40,7 +40,7 @@ export default function RandomUser() {
 
             setUserInfo(newResults)
             setNextPageNumber(data.info.page + 1)
-            console.log("userInfo", userInfo)
+            // console.log("userInfo", userInfo)
         })
     }
 

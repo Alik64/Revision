@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Form from './Form'
 
 function Todo(props) {
 
-    const [count, setCount] = useState(0)
+
     return (
         <div>
-            <div>Count: {count}</div>
-            <button onClick={() => setCount(count + 1)}>Add</button>
+            <Form />
         </div>
     )
 }

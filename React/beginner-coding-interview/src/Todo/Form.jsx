@@ -1,11 +1,23 @@
 import React, { useState } from 'react'
 
+
+const useInputValue = initialValue => {
+    const [value, setValue] = useState(initialValue)
+
+    return {
+        value,
+        onChange: (e) => setValue(e.target.value)
+    }
+}
+
 export default function Form() {
-    const [value, setvalue] = useState("")
+    const text = useInputValue("hello")
+
+
 
     return (
         <div>
-            <input type="text" onChange={e => setValue(e.target.value)} />
+            <input {...text} />
         </div>
     )
 }
