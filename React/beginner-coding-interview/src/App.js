@@ -4,6 +4,7 @@ import Counter from './Counter';
 import RandomUser from './RandomUser';
 import Todo from './Todo/Todo';
 import TodoApp from './Todo2/TodoApp';
+import TodoLocalStorage from './TodoLocalStorage/TodoLocalStorage';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <Counter />
       <RandomUser /> */}
       {/* <Todo /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      <TodoLocalStorage />
     </div>
 
   );
