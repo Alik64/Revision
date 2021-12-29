@@ -41,7 +41,7 @@ export default function TodoLocalStorage() {
 
     }, [])
     return (
-        <>
+        <div className={styles.wrapper}>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -60,12 +60,12 @@ export default function TodoLocalStorage() {
                             <li >{text}</li>
                             <button
                                 className={styles.deleteBtn}
-                                onClick={() => handleRemoveTask(id)} >x</button>
+                                onClick={() => handleRemoveTask(id)} >✔️</button>
                         </div>
 
                     )}
             </ol>
-        </>
+        </div>
     )
 }
 

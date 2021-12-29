@@ -13,11 +13,11 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background: rgb(174, 234, 238);
   background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
+    45deg,
+    rgba(174, 234, 238, 1) 0%,
+    rgba(21, 29, 171, 1) 100%
   );
 }
 
