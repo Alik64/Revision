@@ -10,7 +10,7 @@ body {
   background: #191919;
   color: #c4c4c4;
   display: flex;
-  align-items: center;
+  padding: 10px;
   justify-content: center;
   min-height: 100vh;
   background: rgb(174, 234, 238);

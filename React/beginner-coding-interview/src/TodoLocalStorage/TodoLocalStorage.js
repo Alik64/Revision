@@ -15,7 +15,7 @@ export default function TodoLocalStorage() {
         if (text) {
             const newArr = [...tasks, { text, complete: false, id: uuidv4() }]
             setTasks(newArr)
-            window.localStorage.setItem("tasks", JSON.stringify(newArr))
+            window.localStorage.setItem("tasks", (newArr))
             setText("")
         }
 
@@ -35,6 +35,9 @@ export default function TodoLocalStorage() {
         window.localStorage.setItem("tasks", filteredArr);
     }
     console.log(tasks)
+
+
+
     useEffect(() => {
         const storagedTasks = window.localStorage.getItem('tasks') ? JSON.parse(window.localStorage.getItem('tasks')) : [];
         setTasks(storagedTasks)
