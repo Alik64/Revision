@@ -1,0 +1,42 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 250px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  justify-content: space-between;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  margin: 20px 10px;
+}
+
+.task:hover {
+  background-color: rgb(16, 189, 30);
+  color: #000;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+.deleteBtn {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+}
