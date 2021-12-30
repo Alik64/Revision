@@ -10,4 +10,4 @@ INSERT INTO students VALUES ("Chris", 79);
 
 -- ANSWER
 
-SELECT name from students WHERE grade > 80;
+SELECT name FROM students WHERE grade > 80;
