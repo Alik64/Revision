@@ -30,7 +30,7 @@ export default function TodoLocalStorage() {
     //     setTasks([...tasks])
     // } 
     const handleRemoveTask = (id) => {
-        const filteredArr = tasks.filter(obj => obj.id != id)
+        const filteredArr = tasks.filter(obj => obj.id !== id)
         setTasks(filteredArr)
         window.localStorage.setItem("tasks", filteredArr);
     }
