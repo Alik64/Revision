@@ -18,14 +18,12 @@ function start() {
 function rotate() {
     roullete.style.transform = `rotate(${count}deg)`
     count += 45
-    console.log('ÇA TOURNE')
+
 }
 
 function stop() {
     clearInterval(intervalEx)
     intervalEx = null
-
-    console.log('Stop')
 
 }
 
