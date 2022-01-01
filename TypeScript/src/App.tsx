@@ -23,12 +23,12 @@ sex="male"
 
 //______Objects______//
 type AdressType = {
-  city: string
+  city?: string // ? - veut dire que la proprièté n'est pas obligatoire
   country: string
 }
 
 type UserType = {
-  sayHello: Function
+  sayHello?: Function
   name : string
   age: number
   isSamuray: boolean
@@ -45,7 +45,12 @@ let user:UserType ={
   }
 }
 console.log(user.name)
+//_______fonctions_______//
 
+
+const summ = (a: number ,b:number)=>{ // paramètres typisés !
+  return a+b
+}
 
 function App() {
   return (
