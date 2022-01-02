@@ -51,6 +51,29 @@ const summ = (a: number ,b:number)=>{ // paramètres typisés !
   return a+b
 }
 
+// Bonus ------------------
+// type InitialStateType = {
+  
+//   name : string
+//   age: number
+//   isSamuray: boolean
+//   adress: AdressType | null
+// }
+let initialState ={
+  name: null as string | null,
+  age: null as number | null,
+  isSamuray: null as boolean | null,
+  adress: [] as Array<AdressType>,
+  counter:null as number | null,
+}
+export type InitialStateType = typeof initialState // générer le type à partir de InitialState
+
+// let state: InitialStateType={
+// adress:{
+//   country:"usa"
+// } ...
+// }
+
 function App() {
   return (
     <div className="App">
