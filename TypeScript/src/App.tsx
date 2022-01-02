@@ -74,6 +74,21 @@ export type InitialStateType = typeof initialState // générer le type à parti
 // } ...
 // }
 
+//_________________ ACtions
+
+let GET_TASKS = "APP/GetTASKS"
+
+type GetTasksActionType ={
+  id:number
+  type: typeof GET_TASKS
+}
+
+let action:GetTasksActionType = {
+  type: GET_TASKS,
+  id:12
+}
+
+
 function App() {
   return (
     <div className="App">
