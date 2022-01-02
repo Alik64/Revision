@@ -28,7 +28,7 @@ type AdressType = {
 }
 
 type UserType = {
-  sayHello?: Function
+  sayHello?: (message:string)=> void // void => return rien
   name : string
   age: number
   isSamuray: boolean
@@ -46,7 +46,6 @@ let user:UserType ={
 }
 console.log(user.name)
 //_______fonctions_______//
-
 
 const summ = (a: number ,b:number)=>{ // paramètres typisés !
   return a+b
