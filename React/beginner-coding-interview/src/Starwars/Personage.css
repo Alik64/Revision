@@ -1,0 +1,29 @@
+.personage_card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #fff;
+  color: #242424;
+  padding: 50px 10px;
+  border-radius: 20px;
+}
+
+.personage_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.personage_info > * {
+  margin-bottom: 10px;
+}
+
+.personage_img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.personage_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
