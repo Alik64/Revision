@@ -13,12 +13,6 @@ body {
   padding: 10px;
   justify-content: center;
   min-height: 100vh;
-  background: rgb(174, 234, 238);
-  background: linear-gradient(
-    45deg,
-    rgba(174, 234, 238, 1) 0%,
-    rgba(21, 29, 171, 1) 100%
-  );
 }
 
 code {

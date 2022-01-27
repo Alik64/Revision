@@ -1,6 +1,7 @@
 
 import './App.css';
 import Counter from './Counter';
+import RandomUser2 from './Intermediate/RandomUser2';
 import RandomUser from './RandomUser';
 import Starwars from './Starwars/Starwars';
 
@@ -16,7 +17,8 @@ function App() {
       {/* <Todo /> */}
       {/* <TodoApp /> */}
       {/* <TodoLocalStorage /> */}
-      <Starwars />
+      {/* <Starwars /> */}
+      <RandomUser2 />
     </div>
 
   );
