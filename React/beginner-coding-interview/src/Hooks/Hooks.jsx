@@ -1,19 +1,55 @@
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 export default function Hooks() {
+
+
     const [counter, setCounter] = useState(0)
     const [state, dispatch] = useReducer(reducer, initState);
+    const [effectCount, setEffectCount] = useState(0)
+    const [timerOff, setTimerOff] = useState(false)
+
+    useEffect(() => {
+        let timer
+        if (!timerOff) {
+            timer = setTimeout(() => {
+                setEffectCount(effectCount + 1)
+                document.title = `${effectCount} seconds`
+            }, 1000);
+        }
+
+        return () => {
+            clearInterval(timer)
+        };
+    }, [effectCount, timerOff]);
+
+
+
+
+
     return (
         <div style={{
             display: "grid",
             placeItems: "center"
         }}>
-            <h2>Vous avez cliqué {counter} fois</h2>
-            <button onClick={() => setCounter(counter + 1)}>CLiquez ici</button>
-
+            <h2>useState count : {counter} </h2>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
+                <button style={{ width: "100px" }} onClick={() => setCounter(0)}>Reset</button>
+                <button style={{ width: "100px" }} onClick={() => setCounter(counter + 1)}>+</button>
+            </div>
+            <br />
             <h2>useReducer count: {state.count}</h2>
-            <button onClick={() => dispatch({ type: "PLUS" })}>+</button>
-            <button onClick={() => dispatch({ type: "MINUS" })}>-</button>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
+                <button style={{ width: "100px" }} onClick={() => dispatch({ type: "MINUS" })}>-</button>
+                <button style={{ width: "100px" }} onClick={() => dispatch({ type: "PLUS" })}>+</button>
+            </div>
+            <br />
+            <h2>useEffect count : {effectCount} </h2>
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
+                <button style={{ width: "100px" }} onClick={() => setEffectCount(0)}>Reset</button>
+                <button style={{ width: "100px" }} onClick={() => setTimerOff(false)}>Start</button>
+                <button style={{ width: "100px" }} onClick={() => setTimerOff(true)}>Stop</button>
+            </div>
+
         </div>)
 }
 
@@ -28,5 +64,7 @@ function reducer(state, action) {
             return { count: state.count + 1 }
         case "MINUS":
             return { count: state.count - 1 }
+        default:
+            return state
     }
 }
