@@ -1,13 +1,14 @@
 
 import './App.css';
 
-import Hooks from './Hooks/Hooks';
+
+import Quiz from './ReactQuiz/Quiz';
 
 
 function App() {
   return (
     <div>
-      <Hooks />
+      <Quiz />
     </div>
 
   );

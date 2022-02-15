@@ -13,7 +13,7 @@ export default function Hooks() {
         if (!timerOff) {
             timer = setTimeout(() => {
                 setEffectCount(effectCount + 1)
-                document.title = `${effectCount} seconds`
+                // document.title = `${effectCount} seconds`
             }, 1000);
         }
 
