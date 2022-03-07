@@ -1,11 +1,14 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Admin from './ReactRouterDom/components/Admin';
 import Featured from './ReactRouterDom/components/Featured';
 
 import Navbar from './ReactRouterDom/components/Navbar';
 import New from './ReactRouterDom/components/New';
 import OrderSummury from './ReactRouterDom/components/OrderSummury';
+import UserDetails from './ReactRouterDom/components/UserDetails';
+import { Users } from './ReactRouterDom/components/Users';
 import About from './ReactRouterDom/pages/About';
 import Home from './ReactRouterDom/pages/Home';
 import NotFound from './ReactRouterDom/pages/NotFound';
@@ -27,6 +30,11 @@ function App() {
           <Route path='featured' element={<Featured />} />
           <Route path='new' element={<New />} />
         </Route>
+        <Route path='users' element={<Users />} >
+          <Route path=':userId' element={<UserDetails />} />
+          <Route path='admin' element={<Admin />} />
+        </Route>
+
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
