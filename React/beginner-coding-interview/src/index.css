@@ -26,5 +26,10 @@ nav {
 
 nav a {
   margin-right: 16px;
+  text-decoration: none;
   color: #c4c4c4;
+}
+
+nav a.active {
+  color: aqua;
 }
