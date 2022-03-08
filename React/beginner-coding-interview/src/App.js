@@ -10,6 +10,7 @@ import Featured from './ReactRouterDom/components/Featured';
 import Navbar from './ReactRouterDom/components/Navbar';
 import New from './ReactRouterDom/components/New';
 import OrderSummury from './ReactRouterDom/components/OrderSummury';
+import RequireAuth from './ReactRouterDom/components/RequireAuth';
 import UserDetails from './ReactRouterDom/components/UserDetails';
 import { Users } from './ReactRouterDom/components/Users';
 
@@ -44,7 +45,7 @@ function App() {
           <Route path=':userId' element={<UserDetails />} />
           <Route path='admin' element={<Admin />} />
         </Route>
-        <Route path='profile' element={<Profile />} />
+        <Route path='profile' element={<RequireAuth><Profile /></RequireAuth>} />
         <Route path='login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
