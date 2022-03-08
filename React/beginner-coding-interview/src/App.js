@@ -4,6 +4,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Admin from './ReactRouterDom/components/Admin';
+import { AuthProvider } from './ReactRouterDom/components/auth';
 import Featured from './ReactRouterDom/components/Featured';
 
 import Navbar from './ReactRouterDom/components/Navbar';
@@ -13,16 +14,17 @@ import UserDetails from './ReactRouterDom/components/UserDetails';
 import { Users } from './ReactRouterDom/components/Users';
 
 import Home from './ReactRouterDom/pages/Home';
+import { Login } from './ReactRouterDom/pages/Login';
 import NotFound from './ReactRouterDom/pages/NotFound';
 import Products from './ReactRouterDom/pages/Products';
+import Profile from './ReactRouterDom/pages/Profile';
 // import About from './ReactRouterDom/pages/About';
 
 const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
 
 function App() {
   return (
-    <>
-
+    <AuthProvider>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -42,10 +44,11 @@ function App() {
           <Route path=':userId' element={<UserDetails />} />
           <Route path='admin' element={<Admin />} />
         </Route>
-
+        <Route path='profile' element={<Profile />} />
+        <Route path='login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </>
+    </AuthProvider>
 
   );
 }
