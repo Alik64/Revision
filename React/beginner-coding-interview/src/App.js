@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Admin from './ReactRouterDom/components/Admin';
@@ -9,11 +11,13 @@ import New from './ReactRouterDom/components/New';
 import OrderSummury from './ReactRouterDom/components/OrderSummury';
 import UserDetails from './ReactRouterDom/components/UserDetails';
 import { Users } from './ReactRouterDom/components/Users';
-import About from './ReactRouterDom/pages/About';
+
 import Home from './ReactRouterDom/pages/Home';
 import NotFound from './ReactRouterDom/pages/NotFound';
 import Products from './ReactRouterDom/pages/Products';
+// import About from './ReactRouterDom/pages/About';
 
+const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
 
 function App() {
   return (
@@ -22,7 +26,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
+        <Route path='about' element={
+          <React.Suspense fallback='Loading...'>
+            <LazyAbout />
+          </React.Suspense>} />
+
         <Route path='order-summary' element={<OrderSummury />} />
 
         <Route path='products' element={<Products />}>
