@@ -41,3 +41,5 @@ class ManC extends React.Component {
 let m1 = new ManC("John", 24);
 let jsx = m1.render();
 //
+
+console.log("test ")
