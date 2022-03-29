@@ -1,15 +1,24 @@
 const { ApolloServer, gql } = require('apollo-server')
 
+
+// type => String, Int, Float, Boolean / ID!
+
 const typeDefs = gql`
+# add ! to not allow 'null'
 type Query {
-    name: String,
-    height: Int,
+    name: String # or null => String! => not allow 'null'
+    numberOfAnimals: Int
+    price: Float
+    real: Boolean
+    
 }
 `
 const resolvers = {
     Query: {
         name: () => { return ' Albert' },
-        height: () => { return 190 }
+        numberOfAnimals: () => { return 55 },
+        price: () => { return 234.456 },
+        real: () => { return true }
     },
 
 
