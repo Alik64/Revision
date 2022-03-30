@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LifecycleA from './ComponentLifecycleMethods/LifecycleA';
 import LifecycleB from './ComponentLifecycleMethods/LifecycleB';
+import ParentComp from './PureComponent/ParentComp';
+import PureComp from './PureComponent/PureComp';
 import Admin from './ReactRouterDom/components/Admin';
 import { AuthProvider } from './ReactRouterDom/components/auth';
 import Featured from './ReactRouterDom/components/Featured';
@@ -58,8 +60,9 @@ const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
 function App() {
   return (
     <>
-      <LifecycleA />
+      {/* <LifecycleA /> */}
       {/* <LifecycleB /> */}
+      <ParentComp />
     </>
 
   );
