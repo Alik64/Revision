@@ -8,7 +8,7 @@ const typeDefs = gql`
 type Query {
     name: String # or null => String! => not allow 'null'
     numberOfAnimals: Int
-    price: Float
+    price: Float!
     real: Boolean
     
 }
