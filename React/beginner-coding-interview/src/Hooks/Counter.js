@@ -6,11 +6,11 @@ export default function Counter(props) {
 
 
     const onIncrement = () => {
-        setCount(count + 1)
+        setCount(prevCount => prevCount + 1)
 
     }
     const onDecrement = () => {
-        setCount(count - 1)
+        setCount(prevCount => prevCount - 1)
 
     }
 
