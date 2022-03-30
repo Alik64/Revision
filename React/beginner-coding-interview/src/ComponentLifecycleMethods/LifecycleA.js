@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import React, { Component } from 'react'
 import LifecycleB from './LifecycleB'
 
-export class LifecycleA extends Component {
+class LifecycleA extends Component {
     constructor(props) {
         super(props)
 
