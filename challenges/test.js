@@ -5,10 +5,10 @@ function filterWords(words, letters) {
     let arr = letters.split('');
     let result = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < words.length; j++) {
-            if (words[j].includes(arr[i])) {
-                result.push(words[j])
+    for (let i = 0; i < words.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (words[i].includes(arr[j])) {
+                result.push(words[i])
             }
         }
     }
@@ -16,6 +16,8 @@ function filterWords(words, letters) {
 }
 
 filterWords(['the', 'dog', 'got', 'a', 'bone'], "ae")
+
+
 
 
 function choseBig(myArray) {
