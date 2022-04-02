@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import List from './List';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 
 const source = new Array(12000).fill('').map((_, i) => ({ id: i, name: `Item ${i + 1}` }))
 
@@ -15,15 +15,20 @@ const filterItems = (filter) => {
 
 function App() {
   const [filter, setFilter] = useState('')
+  const [isPending, startTransition] = useTransition()
 
   const items = filterItems(filter)
 
   const changeHandler = (e) => {
-    setFilter(e.target.value)
+    startTransition(() => {
+      setFilter(e.target.value)
+    })
+
   }
   return (
     <div className="App">
       <input type='text' onChange={changeHandler} />
+      <h2>{isPending && 'is Pending...'}</h2>
       <List items={items} />
     </div>
   );
