@@ -19,16 +19,20 @@ function App() {
 
   const items = filterItems(filter)
 
+  // const changeHandler = (e) => {
+  //   startTransition(() => {
+  //     setFilter(e.target.value)
+  //   })
+  // }
   const changeHandler = (e) => {
-    startTransition(() => {
-      setFilter(e.target.value)
-    })
+
+    setFilter(e.target.value)
 
   }
   return (
     <div className="App">
       <input type='text' onChange={changeHandler} />
-      <h2>{isPending && 'is Pending...'}</h2>
+      {/* <h2>{isPending && 'is Pending...'}</h2> */}
       <List items={items} />
     </div>
   );
