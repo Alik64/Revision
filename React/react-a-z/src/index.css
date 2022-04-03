@@ -1,0 +1,15 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #272727;
+  color: #cecece;
+
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
