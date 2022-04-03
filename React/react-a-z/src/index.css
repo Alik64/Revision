@@ -4,12 +4,21 @@
   box-sizing: border-box;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   background-color: #272727;
   color: #cecece;
+}
 
-  margin-top: 50px;
+.post {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
 }
