@@ -16,18 +16,14 @@ function App() {
     { id: 5, title: 'JavaScript', body: 'Description' },
   ])
 
-  const [title, setTitle] = useState('')
-  const [body, setBody] = useState('')
+  const [post, setPost] = useState({ title: '', body: '' })
 
 
   const addNewPost = (e) => {
     e.preventDefault()
-    const newPost = { id: Date.now(), title, body }
-    setPosts(
-      [...posts, newPost]
-    )
-    setTitle('')
-    setBody('')
+    const newPost = { ...post, id: Date.now() }
+    setPosts([...posts, newPost])
+
 
 
   }
@@ -38,14 +34,15 @@ function App() {
         <MyInput
           type="text"
           placeholder="Titre de l'article"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+          value={post.title}
+          onChange={e => setPost({ ...post, title: e.target.value })}
         />
         <MyInput
           type="text"
           placeholder="Description"
-          value={body}
-          onChange={e => setBody(e.target.value)}
+          value={post.body}
+          onChange={e => setPost({ ...post, body: e.target.value })}
+
 
         />
 
