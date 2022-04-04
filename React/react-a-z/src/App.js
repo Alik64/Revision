@@ -22,7 +22,7 @@ function App() {
 
 
   const sortedPosts = useMemo(() => {
-    console.log('getSortedPosts')
+
     if (selectSort) {
       return [...posts].sort((a, b) => a[selectSort].localeCompare(b[selectSort]))
     }
