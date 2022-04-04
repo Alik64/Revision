@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import ClassCounter from "./components/ClassCounter";
 import Counter from "./components/Counter";
 import PostForm from "./components/PostForm";
@@ -18,7 +18,20 @@ function App() {
     { id: 5, title: 'HTML', body: 'HyperText Markup Language' },
   ])
   const [selectSort, setSelectSort] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
 
+
+  const sortedPosts = useMemo(() => {
+    console.log('getSortedPosts')
+    if (selectSort) {
+      return [...posts].sort((a, b) => a[selectSort].localeCompare(b[selectSort]))
+    }
+    return posts
+  }, [selectSort, posts])
+
+  const sortedAndSearchedPosts = useMemo(() => {
+    return sortedPosts.filter(post => post.title.toLowerCase().includes(searchQuery))
+  }, [searchQuery, sortedPosts])
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
@@ -28,7 +41,6 @@ function App() {
   }
   const sortPosts = (sort) => {
     setSelectSort(sort)
-    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])))
   }
   return (
     <div className="App">
@@ -36,6 +48,11 @@ function App() {
       <PostForm create={createPost} />
       <hr style={{ margin: '15px 0' }} />
       <div>
+        <MyInput
+          placeholder='Recherche...'
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <MySelect
           value={selectSort}
           onChange={sortPosts}
@@ -47,8 +64,8 @@ function App() {
         />
       </div>
       {
-        posts.length !== 0
-          ? <PostList posts={posts} deletePost={deletePost} title='JavaScript' />
+        sortedAndSearchedPosts.length !== 0
+          ? <PostList posts={sortedAndSearchedPosts} deletePost={deletePost} title='JavaScript' />
           : <h3 className="avertissement">"La section est vide!"</h3>
       }
 
