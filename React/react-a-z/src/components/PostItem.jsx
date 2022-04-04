@@ -1,6 +1,12 @@
 import React from 'react'
 
 export default function PostItem(props) {
+    const deletePost = (id) => {
+
+        props.deletePost(id)
+    }
+
+
     return (
         <div className="post">
             <div className="post__content">
@@ -10,7 +16,7 @@ export default function PostItem(props) {
                 </p>
             </div>
             <div className="post__btns">
-                <button>Supprimer</button>
+                <button onClick={() => deletePost(props.post.id)}>Supprimer</button>
             </div>
         </div>
     )
