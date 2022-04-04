@@ -22,3 +22,9 @@ body {
   border: 2px solid teal;
   margin-top: 15px;
 }
+
+.avertissement {
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+}

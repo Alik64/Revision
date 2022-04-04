@@ -29,7 +29,11 @@ function App() {
     <div className="App">
 
       <PostForm create={createPost} />
-      <PostList posts={posts} deletePost={deletePost} title='JavaScript' />
+      {
+        posts.length !== 0
+          ? <PostList posts={posts} deletePost={deletePost} title='JavaScript' />
+          : <h3 className="avertissement">"La section est vide!"</h3>
+      }
 
 
     </div>
