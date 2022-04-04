@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import ClassCounter from "./components/ClassCounter";
 import Counter from "./components/Counter";
+import PostForm from "./components/PostForm";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
 import MyButton from "./components/UI/button/MyButton";
@@ -16,39 +17,16 @@ function App() {
     { id: 5, title: 'JavaScript', body: 'Description' },
   ])
 
-  const [post, setPost] = useState({ title: '', body: '' })
 
 
-  const addNewPost = (e) => {
-    e.preventDefault()
-    const newPost = { ...post, id: Date.now() }
+  const createPost = (newPost) => {
     setPosts([...posts, newPost])
-
-
-
   }
+
   return (
     <div className="App">
 
-      <form >
-        <MyInput
-          type="text"
-          placeholder="Titre de l'article"
-          value={post.title}
-          onChange={e => setPost({ ...post, title: e.target.value })}
-        />
-        <MyInput
-          type="text"
-          placeholder="Description"
-          value={post.body}
-          onChange={e => setPost({ ...post, body: e.target.value })}
-
-
-        />
-
-        <MyButton onClick={addNewPost}>Créer</MyButton>
-
-      </form>
+      <PostForm create={createPost} />
       <PostList posts={posts} title='JavaScript' />
 
 
