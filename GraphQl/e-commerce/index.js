@@ -106,25 +106,38 @@ type Query {
     hello: String
     products: [Product!]!
     product(id: ID!): Product
+    categories:[Category!]!
+    category(id: ID!): Category
+
 }
 type Product {
-       name: String!
-       description: String!
-       quantity: Int!
-       price: Float!
-       image: String!
-       onSale: Boolean!
+    id: ID!
+    name: String!
+    description: String!
+    quantity: Int!
+    price: Float!
+    image: String!
+    onSale: Boolean!
+    }
+
+type Category {
+    id:ID!
+    name: String!
     }
 `
 const resolvers = {
     Query: {
-        hello: () => { return ' Albert' },
-        products: () => { return products },
+        hello: (parent, args, context) => { return ' Albert' },
+        products: (parent, args, context) => { return products },
         product: (parent, args, context) => {
-            const productId = args.id
-            const product = products.find(product => product.id === productId)
-            if (!product) return null
-            return product
+            const { id } = args
+            return products.find(product => product.id === id)
+
+        },
+        categories: (parent, args, context) => categories,
+        category: (parent, args, context) => {
+            const { id } = args
+            return categories.find(cat => cat.id === id)
         }
     },
 
