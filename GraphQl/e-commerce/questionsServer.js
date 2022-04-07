@@ -32,6 +32,7 @@ const resolvers = {
         question: (parent, args, context) => {
             const questionId = args.id
             const question = questions.find(quest => quest.id === questionId)
+            if (!question) return null
 
             return question
         }
