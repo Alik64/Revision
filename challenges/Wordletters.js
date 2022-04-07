@@ -16,14 +16,3 @@ function filterWords(words, letters) {
 }
 
 filterWords(['the', 'dog', 'got', 'a', 'bone'], "ae")
-
-
-
-
-function choseBig(myArray) {
-    console.log((myArray.sort((a, b) => b - a).slice(0, 2)));
-}
-
-
-
-choseBig([-1, 9, 0, 8, -5, 6, -24])

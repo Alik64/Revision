@@ -5,7 +5,7 @@ const users = [
 ]
 
 let usersSort = users.sort((a, b) => a.lastname < b.lastname ? -1 : 1)
-
+console.log(usersSort)
 
 
 
