@@ -8,6 +8,7 @@ import MyButton from "./components/UI/button/MyButton";
 import MyInput from "./components/UI/input/MyInput";
 import MySelect from "./components/UI/select/MySelect";
 import './styles/App.css'
+import { v4 as uuidv4 } from 'uuid'
 
 function App() {
   const [posts, setPosts] = useState([

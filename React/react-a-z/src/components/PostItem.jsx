@@ -14,6 +14,8 @@ export default function PostItem(props) {
                 <strong>{props.number}. {props.post.title}</strong>
                 <p>
                     {props.post.body}
+                    {props.post.id}
+
                 </p>
             </div>
             <div className="post__btns">
