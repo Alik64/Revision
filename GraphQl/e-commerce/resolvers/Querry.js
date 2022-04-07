@@ -1,16 +1,13 @@
 import { categories, products } from '../db.js'
 
 export const Query = {
-    hello: (parent, args, context) => { return ' Albert' },
-    products: (parent, args, context) => { return products },
-    product: (parent, args, context) => {
-        const { id } = args
-        return products.find(product => product.id === id)
 
+    products: (parent, args, { products }) => products,
+    product: (parent, { id }, { products }) => {
+        return products.find(product => product.id === id)
     },
-    categories: (parent, args, context) => categories,
-    category: (parent, args, context) => {
-        const { id } = args
+    categories: (parent, args, { categories }) => categories,
+    category: (parent, { id }, { categories }) => {
         return categories.find(cat => cat.id === id)
     }
 }
