@@ -53,7 +53,6 @@ const products = [
         image: "img-5",
         onSale: true,
         categoryId: "34115aac-0ff5-4859-8f43-10e8db23602b"
-
     },
     {
         id: "f01bcdec-6783-464e-8f9e-8416830f7569",
@@ -134,6 +133,7 @@ type Product {
     price: Float!
     image: String!
     onSale: Boolean!
+    category: Category
     }
 
 type Category {
@@ -163,6 +163,12 @@ const resolvers = {
             return products.filter(prod => prod.categoryId === id)
         }
     },
+    Product: {
+        category: (parent, args, context) => {
+            const { categoryId } = parent
+            return categories.find(cat => cat.id === categoryId)
+        }
+    }
 
 
 }
