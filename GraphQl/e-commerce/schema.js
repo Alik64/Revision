@@ -5,7 +5,7 @@ export const typeDefs = gql`
 # add ! to not allow 'null'
 type Query {
     hello: String
-    products: [Product!]!
+    products(filter: ProductsFilterInput): [Product!]!
     product(id: ID!): Product
     categories:[Category!]!
     category(id: ID!): Category
@@ -26,7 +26,7 @@ type Product {
 type Category {
     id:ID!
     name: String!
-    products:[Product!]!
+    products(filter: ProductsFilterInput):[Product!]!
     }
 
 type Review {
@@ -35,5 +35,9 @@ type Review {
     title: String!
     comment: String!
     rating: Int!
-    }
-`
+}
+
+input ProductsFilterInput {
+    onSale: Boolean
+}
+`;
