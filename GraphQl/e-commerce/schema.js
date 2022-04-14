@@ -20,7 +20,7 @@ type Product {
     image: String!
     onSale: Boolean!
     category: Category
-    reviews:[Review!]!
+    reviews(filter: ReviewRatingFilter):[Review!]!
     }
 
 type Category {
@@ -39,5 +39,9 @@ type Review {
 
 input ProductsFilterInput {
     onSale: Boolean
+}
+
+input ReviewRatingFilter{
+    rating: Int!
 }
 `;
