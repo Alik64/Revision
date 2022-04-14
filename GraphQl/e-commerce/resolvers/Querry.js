@@ -1,5 +1,3 @@
-import { categories, products } from '../db.js'
-
 export const Query = {
 
     products: (parent, args, { products }) => products,
