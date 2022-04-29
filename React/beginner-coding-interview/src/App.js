@@ -57,12 +57,20 @@ const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
 
 //   );
 // }
+const WelcomeTitle = ({ user, primary }) => {
+
+  const el = primary ? 'h1' : 'h2'
+
+  return React.createElement(el, { user, primary }, `Welcome ${user}`)
+}
 function App() {
   return (
     <>
       {/* <LifecycleA /> */}
       {/* <LifecycleB /> */}
-      <ParentComp />
+      {/* <ParentComp /> */}
+      <WelcomeTitle user='Peter' primary/>
+
     </>
 
   );
