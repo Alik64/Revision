@@ -38,7 +38,7 @@ function App() {
     setPosts([...posts, newPost])
   }
   const deletePost = (id) => {
-    setPosts(posts.filter(post => post.id != id))
+    setPosts(posts.filter(post => post.id !== id))
   }
   const sortPosts = (sort) => {
     setSelectSort(sort)

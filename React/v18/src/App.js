@@ -32,9 +32,9 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <input type='text' onChange={changeHandler} /> */}
-      {/* <h2>{isPending && 'is Pending...'}</h2> */}
-      {/* <List items={items} /> */}
+      <input type='text' onChange={changeHandler} />
+      <h2>{isPending && 'is Pending...'}</h2>
+      <List items={items} />
       <Batching />
     </div>
   );
