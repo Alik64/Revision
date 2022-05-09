@@ -4,9 +4,28 @@ export default function Hooks() {
 
 
     const [counter, setCounter] = useState(0)
-    const [state, dispatch] = useReducer(reducer, initState);
     const [effectCount, setEffectCount] = useState(0)
     const [timerOff, setTimerOff] = useState(false)
+    const [state, dispatch] = useReducer(reducer, initState);
+   
+    const initState = {
+        count: 0
+    }
+    
+    function reducer(state, action) {
+       
+        switch (action.type) {
+            case "PLUS":
+                return { count: state.count + 1 }
+            case "MINUS":
+                return { count: state.count - 1 }
+            default:
+                throw new Error()
+               
+        }
+
+        
+    }
 
     useEffect(() => {
         let timer
@@ -54,17 +73,3 @@ export default function Hooks() {
 }
 
 // useReducer
-const initState = {
-    count: 0
-}
-
-function reducer(state, action) {
-    switch (action.type) {
-        case "PLUS":
-            return { count: state.count + 1 }
-        case "MINUS":
-            return { count: state.count - 1 }
-        default:
-            return state
-    }
-}

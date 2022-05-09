@@ -1,31 +1,31 @@
+import React from "react";
 
-import React from 'react';
+// import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import UseRefHook from "./Hooks/UseRefHook";
+// import LifecycleA from "./ComponentLifecycleMethods/LifecycleA";
+// import LifecycleB from "./ComponentLifecycleMethods/LifecycleB";
+// import ParentComp from "./PureComponent/ParentComp";
+// import PureComp from "./PureComponent/PureComp";
+// import Admin from "./ReactRouterDom/components/Admin";
+// import { AuthProvider } from "./ReactRouterDom/components/auth";
+// import Featured from "./ReactRouterDom/components/Featured";
 
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import LifecycleA from './ComponentLifecycleMethods/LifecycleA';
-import LifecycleB from './ComponentLifecycleMethods/LifecycleB';
-import ParentComp from './PureComponent/ParentComp';
-import PureComp from './PureComponent/PureComp';
-import Admin from './ReactRouterDom/components/Admin';
-import { AuthProvider } from './ReactRouterDom/components/auth';
-import Featured from './ReactRouterDom/components/Featured';
+// import Navbar from "./ReactRouterDom/components/Navbar";
+// import New from "./ReactRouterDom/components/New";
+// import OrderSummury from "./ReactRouterDom/components/OrderSummury";
+// import RequireAuth from "./ReactRouterDom/components/RequireAuth";
+// import UserDetails from "./ReactRouterDom/components/UserDetails";
+// import { Users } from "./ReactRouterDom/components/Users";
 
-import Navbar from './ReactRouterDom/components/Navbar';
-import New from './ReactRouterDom/components/New';
-import OrderSummury from './ReactRouterDom/components/OrderSummury';
-import RequireAuth from './ReactRouterDom/components/RequireAuth';
-import UserDetails from './ReactRouterDom/components/UserDetails';
-import { Users } from './ReactRouterDom/components/Users';
-
-import Home from './ReactRouterDom/pages/Home';
-import { Login } from './ReactRouterDom/pages/Login';
-import NotFound from './ReactRouterDom/pages/NotFound';
-import Products from './ReactRouterDom/pages/Products';
-import Profile from './ReactRouterDom/pages/Profile';
+// import Home from "./ReactRouterDom/pages/Home";
+// import { Login } from "./ReactRouterDom/pages/Login";
+// import NotFound from "./ReactRouterDom/pages/NotFound";
+// import Products from "./ReactRouterDom/pages/Products";
+// import Profile from "./ReactRouterDom/pages/Profile";
 // import About from './ReactRouterDom/pages/About';
-
-const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
+// import Counter from "./Hooks/Counter";
+// const LazyAbout = React.lazy(() => import("./ReactRouterDom/pages/About"));
 
 // function App() {
 //   return (
@@ -57,22 +57,22 @@ const LazyAbout = React.lazy(() => import('./ReactRouterDom/pages/About'))
 
 //   );
 // }
-const WelcomeTitle = ({ user, primary }) => {
+// const WelcomeTitle = ({ user, primary }) => {
 
-  const el = primary ? 'h1' : 'h2'
+//   const el = primary ? 'h1' : 'h2'
 
-  return React.createElement(el, { user, primary }, `Welcome ${user}`)
-}
+//   return React.createElement(el, { user, primary }, `Welcome ${user}`)
+// }
 function App() {
   return (
     <>
       {/* <LifecycleA /> */}
       {/* <LifecycleB /> */}
       {/* <ParentComp /> */}
-      <WelcomeTitle user='Peter' primary/>
-
+      {/* <WelcomeTitle user='Peter' primary/> */}
+      {/* <Counter /> */}
+      <UseRefHook />
     </>
-
   );
 }
 
