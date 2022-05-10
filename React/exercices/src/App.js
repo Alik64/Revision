@@ -2,7 +2,9 @@ import React from "react";
 
 // import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import UseRefHook from "./Hooks/UseRefHook";
+import UseRefSaveName from "./Hooks/UseRefSaveName";
+// import MultipleInputs from "./Hooks/MultipleInputs";
+// import UseRefHook from "./Hooks/UseRefHook";
 // import LifecycleA from "./ComponentLifecycleMethods/LifecycleA";
 // import LifecycleB from "./ComponentLifecycleMethods/LifecycleB";
 // import ParentComp from "./PureComponent/ParentComp";
@@ -71,7 +73,8 @@ function App() {
       {/* <ParentComp /> */}
       {/* <WelcomeTitle user='Peter' primary/> */}
       {/* <Counter /> */}
-      <UseRefHook />
+      {/* <MultipleInputs /> */}
+      <UseRefSaveName />
     </>
   );
 }
