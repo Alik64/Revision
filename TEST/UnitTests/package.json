@@ -1,0 +1,17 @@
+{
+  "name": "unittests",
+  "version": "1.0.0",
+  "description": "Jest unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "jest",
+    "testing"
+  ],
+  "author": "Albert",
+  "license": "ISC"
+}
