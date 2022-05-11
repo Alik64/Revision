@@ -13,5 +13,8 @@
     "testing"
   ],
   "author": "Albert",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
 }
