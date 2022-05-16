@@ -42,7 +42,7 @@ describe("Lodash: groupBy", () => {
     };
     expect(_.groupBy(array, Math.floor)).toEqual(result);
   });
-  test("should gorup by lenth", () => {
+  test("should gorup by length", () => {
     const array = ["one", "two", "three"];
     const result = {
       5: ["three"],

@@ -3,7 +3,14 @@ class Lodash {
     return array.filter((el) => !!el);
   }
   groupBy(array, prop) {
-    return "hello";
+    return array.reduce((acc, i) => {
+      const key = typeof prop === "function" ? prop(i) : i[prop];
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(i);
+      return acc;
+    }, {});
   }
 }
 module.exports = Lodash;
