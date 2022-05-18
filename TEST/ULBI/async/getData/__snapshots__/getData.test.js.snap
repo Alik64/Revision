@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getData() should return users  1`] = `
+Array [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+]
+`;
