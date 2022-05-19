@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import App from "./App";
 
 describe("<App/>", () => {
@@ -34,11 +35,12 @@ describe("<App/>", () => {
   test('input events',()=>{
     const input = screen.getByPlaceholderText(/hello/i);
     expect(screen.queryByTestId('value-elem')).toContainHTML('') 
-    fireEvent.input(input,{
-      target:{
-        value:'12345'
-      }
-    })
+    // fireEvent.input(input,{
+    //   target:{
+    //     value:'12345'
+    //   }
+    // })
+    userEvent.type(input,'12345')
     expect(screen.queryByTestId('value-elem')).toContainHTML('12345') 
 
   })
