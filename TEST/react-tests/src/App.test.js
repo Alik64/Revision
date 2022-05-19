@@ -13,7 +13,7 @@ describe("<App/>", () => {
     expect(input).toBeInTheDocument();
     expect(btn).toBeInTheDocument();
     // screen.debug();
-    expect(input).toMatchSnapshot();
+   // expect(input).toMatchSnapshot();
   });
   test("testing queryByText()", () => {
     const hwElem = screen.queryByText(/hello world/i);
@@ -27,9 +27,19 @@ describe("<App/>", () => {
   });
   test("test click event", () => {
     const btn = screen.getByTestId("toggle-btn");
-    
     expect(screen.queryByTestId("toggle-elem")).toBeNull();
     fireEvent.click(btn);
     expect(screen.queryByTestId("toggle-elem")).toBeInTheDocument();
   });
+  test('input events',()=>{
+    const input = screen.getByPlaceholderText(/hello/i);
+    expect(screen.queryByTestId('value-elem')).toContainHTML('') 
+    fireEvent.input(input,{
+      target:{
+        value:'12345'
+      }
+    })
+    expect(screen.queryByTestId('value-elem')).toContainHTML('12345') 
+
+  })
 });
