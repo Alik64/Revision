@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> renders my elements 1`] = `
+<input
+  placeholder="hello"
+  type="text"
+/>
+`;
+
+exports[`renders my elements 1`] = `
+<input
+  placeholder="hello"
+  type="text"
+/>
+`;
