@@ -16,7 +16,7 @@ describe("showYourSkill()", () => {
   test("should return Master for 14", () => {
     expect(showYourSkill(14)).toBe("Master");
   });
-  test("should return Pro for 12", () => {
+  +test("should return Pro for 12", () => {
     expect(showYourSkill(12)).toBe("Pro");
   });
   test("should not accept String as argument", () => {
