@@ -55,3 +55,13 @@ const grades = developers.reduce((groupDevs, dev) => {
 }, {});
 
 console.log(grades); // { junior: [ 'Kyle' ], middle: [ 'John', 'Sally' ], senior: [ 'Jill' ] }
+
+// --------------------------- EX 4 ----------------------- //
+
+const numbers = [13, 2, 5];
+
+const sum = numbers.reduce((sum, num, index, array) => {
+  return sum + num;
+}, 0);
+
+console.log(sum);
