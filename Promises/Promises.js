@@ -69,26 +69,26 @@ setTimeout 2
 */
 
 //-------------------------------/ 4 /--------------------------------//
-console.log("START");
+// console.log("START");
 
-setTimeout(() => console.log("setTimeout 1"), 0);
+// setTimeout(() => console.log("setTimeout 1"), 0);
 
-const q = new Promise((resolve) => {
-  console.log("Promise 1");
-  setTimeout(() => console.log("setTimeout 2"));
-  resolve();
-});
+// const q = new Promise((resolve) => {
+//   console.log("Promise 1");
+//   setTimeout(() => console.log("setTimeout 2"));
+//   resolve();
+// });
 
-for (let i = 0; i < 3; i++) {
-  q.then(() => setTimeout(() => console.log("setTimeout 3")));
-}
-q.then(() => console.log("Promise 2"));
+// for (let i = 0; i < 3; i++) {
+//   q.then(() => setTimeout(() => console.log("setTimeout 3")));
+// }
+// q.then(() => console.log("Promise 2"));
 
-for (let i = 0; i < 5; i++) {
-  q.then(() => console.log("Promise 3"));
-}
+// for (let i = 0; i < 5; i++) {
+//   q.then(() => console.log("Promise 3"));
+// }
 
-console.log("finish");
+// console.log("finish");
 
 /*
 START
@@ -106,3 +106,35 @@ setTimeout 3
 setTimeout 3
 setTimeout 3
 */
+//-------------------------------/ transform call back into Promise /--------------------------------//
+
+// console.log("Request data");
+
+// setTimeout(() => {
+//   console.log("Preparing data");
+
+//   const backendData = {
+//     server: "aws",
+//     port: 2000,
+//     status: "working",
+//   };
+
+//   setTimeout(() => {
+//     backendData.modified = true;
+//     console.log("Data received", backendData);
+//   }, 2000);
+// }, 2000);
+
+console.log("Request data");
+const requestData = new Promise((resolve, reject) => {
+  console.log("Preparing data");
+  const backendData = {
+    server: "aws",
+    port: 2000,
+    status: "working",
+  };
+  resolve(backendData);
+}).then((result) => {
+  result.modified = true;
+  console.log("Data received", result);
+});
