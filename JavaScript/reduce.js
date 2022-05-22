@@ -32,3 +32,26 @@ const result = people.reduce((groupedPeople, person) => {
   return groupedPeople;
 }, {});
 console.log(result);
+// {
+//     '26': [ { name: 'Kyle', age: 26 } ],
+//     '31': [ { name: 'John', age: 31 } ],
+//     '42': [ { name: 'Sally', age: 42 }, { name: 'Jill', age: 42 } ]
+// }
+
+// --------------------------- EX 3 ----------------------- //
+
+const developers = [
+  { name: "Kyle", grade: "junior" },
+  { name: "John", grade: "middle" },
+  { name: "Sally", grade: "middle" },
+  { name: "Jill", grade: "senior" },
+];
+
+const grades = developers.reduce((groupDevs, dev) => {
+  const grade = dev.grade;
+  if (groupDevs[grade] == null) groupDevs[grade] = [];
+  groupDevs[grade].push(dev.name);
+  return groupDevs;
+}, {});
+
+console.log(grades); // { junior: [ 'Kyle' ], middle: [ 'John', 'Sally' ], senior: [ 'Jill' ] }
