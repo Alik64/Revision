@@ -126,7 +126,8 @@ setTimeout 3
 // }, 2000);
 
 console.log("Request data...");
-
+/*
+ 
 const requestData = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Preparing data...");
@@ -151,3 +152,19 @@ const requestData = new Promise((resolve, reject) => {
   })
   .catch((err) => console.log("error", err))
   .finally(() => console.log("Finally"));
+*/
+
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(() => resolve(), ms));
+};
+
+// sleep(2000).then(() => console.log("after 2 sec"));
+// sleep(4000).then(() => console.log("after 4 sec"));
+
+Promise.all([sleep(2000), sleep(3000)]).then(() => {
+  console.log("All promises");
+});
+
+Promise.race([sleep(2000), sleep(3000)]).then(() => {
+  console.log("Race promises");
+});
