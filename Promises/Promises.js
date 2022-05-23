@@ -125,16 +125,29 @@ setTimeout 3
 //   }, 2000);
 // }, 2000);
 
-console.log("Request data");
+console.log("Request data...");
+
 const requestData = new Promise((resolve, reject) => {
-  console.log("Preparing data");
-  const backendData = {
-    server: "aws",
-    port: 2000,
-    status: "working",
-  };
-  resolve(backendData);
-}).then((result) => {
-  result.modified = true;
-  console.log("Data received", result);
-});
+  setTimeout(() => {
+    console.log("Preparing data...");
+    const backendData = {
+      server: "aws",
+      port: 2000,
+      status: "working",
+    };
+    resolve(backendData);
+  }, 2000);
+})
+  .then((result) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        result.modified = true;
+        resolve(result);
+      }, 2000);
+    });
+  })
+  .then((clientData) => {
+    console.log("Data received.", clientData);
+  })
+  .catch((err) => console.log("error", err))
+  .finally(() => console.log("Finally"));
