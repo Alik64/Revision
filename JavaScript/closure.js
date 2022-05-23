@@ -3,7 +3,8 @@ function parent(number) {
     console.log(number);
   };
 }
-
+const cmon = parent(42);
+cmon();
 // --------------------------- EX 1 ----------------------- //
 
 function foo() {
