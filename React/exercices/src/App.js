@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import UseMemoHook from "./Hooks/UseMemoHook";
+import UseCallBackHook from "./Hooks/UseCallBackHook";
 
 function App() {
   return (
     <>
-      <UseMemoHook />
+      <UseCallBackHook />
     </>
   );
 }
