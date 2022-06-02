@@ -1,5 +1,8 @@
 import React from "react";
-
+// const users = [
+//   { firstName: "Ada", lastName: "Lovelace" },
+//   { firstName: "Donald", lastName: "Knuth" },
+// ];
 const ListUsers = ({ users }) => {
   const copyUsers = [...users];
   return (

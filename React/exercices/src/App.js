@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
+import Communication from "./CG/Communication";
 import ListUsers from "./CG/ListUsers";
 import Welcome from "./CG/Welcome";
 
 function App() {
-  const users = [
-    { firstName: "Ada", lastName: "Lovelace" },
-    { firstName: "Donald", lastName: "Knuth" },
-  ];
-
   return (
     <>
-      <ListUsers users={users} />
+      <Communication initial="test" />
     </>
   );
 }
