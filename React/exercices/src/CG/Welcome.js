@@ -25,3 +25,7 @@ function Welcome({ primary, user }) {
   );
 }
 export default Welcome;
+
+{
+  /* <Welcome primary user={john}!/> Welcome John! */
+}
