@@ -4,12 +4,12 @@ import React from "react";
 //   { firstName: "Donald", lastName: "Knuth" },
 // ];
 const ListUsers = ({ users }) => {
-  const copyUsers = [...users];
+  // const copyUsers = [...users];
   return (
     <>
       <div className="user-count"> Users: {users.length}</div>
       <ul className="user-list">
-        {copyUsers
+        {users
           .sort((a, b) => (a.lastName < b.lastName ? -1 : 1))
           .map((user) => {
             return (
