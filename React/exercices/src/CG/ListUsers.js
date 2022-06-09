@@ -4,8 +4,6 @@ import React from "react";
 //   { firstName: "Donald", lastName: "Knuth" },
 // ];
 const ListUsers = ({ users }) => {
-  // const copyUsers = [...users];
-
   return (
     <>
       <div className="user-count"> Users: {!!users ? users.length : 0}</div>
