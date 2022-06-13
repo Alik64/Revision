@@ -27,10 +27,27 @@ function choseBig(myArray) {
   }
   return best;
 }
-console.log(choseBig([99, 99, -99, 8, 0, 8, -5, 6, -24])); // [1,5]
 
-// const object = { a: 1, b: 2, c: 3 };
+function Big(array) {
+  let solution = {};
 
-// for (const property in object) {
-//   console.log(`${property}: ${object[property]}`);
-// }
+  //Boucle qui itère chaque valeur
+  for (let x = 0; x < array.length; x++) {
+    let somme = array[x];
+
+    //Boucle qui ajoute la valeur + 1
+    for (let y = x + 1; y < array.length; y++) {
+      somme += array[y];
+
+      //Si la somme est supérieur alors tu récupère les coordonées
+      if (somme > solution.somme || solution.somme === undefined) {
+        solution = { somme: somme, x: x, y: y };
+      }
+    }
+  }
+  return [solution.x, solution.y];
+}
+
+console.log(choseBig([1, 99, 4, 8, 0, 8, -5, 6, -24])); // [0,7]
+
+console.log(Big([1, 99, 4, 8, 0, 8, -5, 6, -24])); // [0,7]
