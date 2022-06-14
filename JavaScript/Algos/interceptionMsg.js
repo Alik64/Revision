@@ -20,7 +20,7 @@ EX :  Input     Output
         11
 */
 const N = 5;
-const array = [18, 21, 14, -1, 11]; // hello
+const array = [18, 21, 14, -1, 11]; // hel o
 
 function decoder(num) {
   if (num < 0) {
