@@ -15,3 +15,4 @@ function reverse(str) {
 
 console.log(reverse("hello world"));
 console.log('reverse("") ==>', reverse(""));
+console.log('reverse("Multiple   spaces") ==>', reverse("Multiple   spaces"));
