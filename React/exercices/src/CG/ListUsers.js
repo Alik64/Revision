@@ -7,9 +7,9 @@ const ListUsers = ({ users }) => {
   return (
     <>
       <div className="user-count"> Users: {!!users ? users.length : 0}</div>
-      <ul className="user-list">
-        {users &&
-          users
+      {users && (
+        <ul className="user-list">
+          {users
             .sort((a, b) =>
               a.lastName.toLowerCase() < b.lastName.toLowerCase() ? -1 : 1
             )
@@ -20,7 +20,8 @@ const ListUsers = ({ users }) => {
                 </li>
               );
             })}
-      </ul>
+        </ul>
+      )}
     </>
   );
 };

@@ -17,7 +17,7 @@ const users = [
 function App() {
   return (
     <>
-      <ListUsers users={users} />
+      <ListUsers />
     </>
   );
 }
