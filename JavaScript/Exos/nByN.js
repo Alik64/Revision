@@ -54,19 +54,14 @@ function transformer(n, input) {
   if (n <= 0 || n >= 10) return;
 
   let str = "";
+  let str2 = " ";
 
   for (let i = 0; i < n; i++) {
     str += input[i][i].toLowerCase();
+    str2 += input[i][n - i - 1].toLowerCase();
   }
 
-  str += " ";
-
-  for (let i = 0; i < n; i++) {
-    let line = input[i];
-    str += line[n - i - 1].toLowerCase();
-  }
-
-  return str;
+  return str.concat(str2);
 }
 
 console.log("transformer(n,input) ==>", transformer(three, input3)); // mto oti
