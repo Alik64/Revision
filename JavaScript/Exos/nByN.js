@@ -55,13 +55,13 @@ function transformer(n, input) {
 
   let str = "";
 
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 0; i < n; i++) {
     str += input[i][i].toLowerCase();
   }
 
   str += " ";
 
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 0; i < n; i++) {
     let line = input[i];
     str += line[n - i - 1].toLowerCase();
   }
