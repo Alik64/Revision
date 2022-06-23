@@ -16,20 +16,20 @@ Example     Input      Output
             bonobo     bonoobbooo
 */
 
-// function repeatLetters(str) {
-//   let arrFromStr = str.split("");
+function repeatLetters(str) {
+  let arrFromStr = str.split("");
 
-//   const count = {}; //{ b: 2, o: 3, n: 1 }
+  const count = {}; //{ b: 2, o: 3, n: 1 }
 
-//   arrFromStr.forEach((element) => {
-//     count[element] = (count[element] ?? 0) + 1;
-//   });
+  arrFromStr.forEach((element) => {
+    count[element] = (count[element] ?? 0) + 1;
+  });
 
-//   return count;
-// }
+  return count;
+}
+
 function repeatLetters(str) {
   let result = "";
-
   for (let i = 0; i < str.length; i++) {
     result += str[i];
     for (let j = 0; j < i; j++) {
@@ -43,5 +43,6 @@ function repeatLetters(str) {
 
 let str = "bonobo";
 let str2 = "repetitive";
-console.log("repeatLetters(str) =>", repeatLetters(str)); // bonoobboooo
+
+console.log("repeatLetters(str) =>", repeatLetters(str)); // bonoobbooo
 console.log("repeatLetters(str) =>", repeatLetters(str2)); // repeetittiiveee
