@@ -1,15 +1,17 @@
 /* Syntaxe de Base  */
-/* 
+// ALIAS
+type User = { firstname: string; lastname: string };
 const a: string = "Hello world!";
 const n: number = 13;
 const b: boolean = true;
 const d: null = null;
 const arr: string[] = ["ts", "is", "fun"];
 const arrAny: any[] = ["ts", 4, "fun", null, undefined, true];
-const user: { firstname: string; lastname: string } = {
+const user: User = {
   firstname: "John",
   lastname: "Doe",
 };
+/* 
 const user2: { firstname: string; lastname?: string } = {
   firstname: "John",
 };

@@ -1,16 +1,15 @@
 "use strict";
-/* Syntaxe de Base  */
-/*
-const a: string = "Hello world!";
-const n: number = 13;
-const b: boolean = true;
-const d: null = null;
-const arr: string[] = ["ts", "is", "fun"];
-const arrAny: any[] = ["ts", 4, "fun", null, undefined, true];
-const user: { firstname: string; lastname: string } = {
-  firstname: "John",
-  lastname: "Doe",
+const a = "Hello world!";
+const n = 13;
+const b = true;
+const d = null;
+const arr = ["ts", "is", "fun"];
+const arrAny = ["ts", 4, "fun", null, undefined, true];
+const user = {
+    firstname: "John",
+    lastname: "Doe",
 };
+/*
 const user2: { firstname: string; lastname?: string } = {
   firstname: "John",
 };
