@@ -34,17 +34,20 @@ function App() {
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
           gridTemplateRows: "repeat(3,1fr)",
+          gap: "1rem",
         }}
       >
         {characters.map((char) => (
           <div key={char.id}>
             <div>
               <h1>{char.name}</h1>
+              <h3>{char.humanName}</h3>
               <img
                 src={char.thumbnail.path}
                 alt=""
-                style={{ width: "150px" }}
+                style={{ width: "150px", height: "150px" }}
               />
+              <p>{char.description}</p>
             </div>
           </div>
         ))}
