@@ -36,7 +36,7 @@ function printId2(id: number | string): void {
 }
 
 */
-const compteur = document.querySelector("#compteur");
+const compteur = document.querySelector("#compteur")!;
 
 let i = 0;
 
@@ -48,6 +48,16 @@ const increment = (e: Event) => {
     span.innerText = i.toString();
   }
 };
+
 if (compteur) {
   compteur.addEventListener("click", increment);
+}
+// Type Narrowing
+
+function printId(id: string | number) {
+  if (typeof id === "number") {
+    console.log((id * 3).toString()); // id => number
+  } else {
+    console.log(id.toUpperCase());
+  }
 }

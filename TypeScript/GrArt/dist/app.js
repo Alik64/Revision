@@ -50,3 +50,12 @@ const increment = (e) => {
 if (compteur) {
     compteur.addEventListener("click", increment);
 }
+// Type Narrowing
+function printId(id) {
+    if (typeof id === "number") {
+        console.log((id * 3).toString()); // id => number
+    }
+    else {
+        console.log(id.toUpperCase());
+    }
+}
