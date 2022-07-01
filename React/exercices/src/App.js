@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "https://triple-triad-game.herokuapp.com/api/characters"
+        "https://triple-triad-game.herokuapp.com/api/v1/characters"
       );
       console.log(result.data);
       setCharacters(result.data.data);
