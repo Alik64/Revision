@@ -2,9 +2,11 @@ let state = 0;
 
 const updateState = (state, { type, payload }) => {
   if (type === "INC") {
-    return state + payload;
+    return {
+      count: state.count + payload,
+    };
   } else if (type === "DEC") {
-    return state - payload;
+    return { count: state.count - payload };
   } else {
     return state;
   }
@@ -26,11 +28,17 @@ class Store {
     this._callbacks.push(callback);
   };
 }
+
+const initialState = {
+  count: 0,
+};
+const store = new Store(updateState, initialState);
+store.subscribe(() => console.log("---subscribe 1", store.getState().count));
+store.subscribe(() => console.log("---subscribe 2", store.getState()));
+
 const incAction = (amount) => ({ type: "INC", payload: amount });
 const decAction = (amount) => ({ type: "DEC", payload: amount });
 
-const store = new Store(updateState, 0);
-store.subscribe(() => console.log(store.getState()));
 store.dispatch(incAction(5));
 store.dispatch(decAction(24));
 store.dispatch(incAction(10));
