@@ -1,18 +1,28 @@
+const INC = "INC";
+const DEC = "DEC";
+const CHANGE_NAME = "CHANGE_NAME";
+
 let state = 0;
 
 const updateState = (state, { type, payload }) => {
-  if (type === "INC") {
-    return {
-      ...state,
-      count: state.count + payload,
-    };
-  } else if (type === "DEC") {
-    return {
-      ...state,
-      count: state.count - payload,
-    };
-  } else {
-    return state;
+  switch (type) {
+    case "INC":
+      return {
+        ...state,
+        count: state.count + payload,
+      };
+    case "DEC":
+      return {
+        ...state,
+        count: state.count - payload,
+      };
+    case "CHANGE_NAME":
+      return {
+        ...state,
+        name: payload,
+      };
+    default:
+      return state;
   }
 };
 
@@ -40,17 +50,15 @@ const initialState = {
 const store = new Store(updateState, initialState);
 const { dispatch } = store;
 store.subscribe(() => console.log("---subscribe 1", store.getState().count));
-store.subscribe(() => console.log("---subscribe 2", store.getState()));
+store.subscribe(() => console.log("---subscribe 2", store.getState().name));
 
-const incAction = (amount) => ({ type: "INC", payload: amount });
-const decAction = (amount) => ({ type: "DEC", payload: amount });
+const incAction = (amount) => ({ type: INC, payload: amount });
+const decAction = (amount) => ({ type: DEC, payload: amount });
+const changeNameAction = (name) => ({ type: CHANGE_NAME, payload: name });
 
 dispatch(incAction(5));
 dispatch(decAction(24));
-dispatch(incAction(10));
-dispatch(decAction(15));
-dispatch(incAction(2));
-dispatch(decAction(6));
+dispatch(changeNameAction("Will Smith"));
 // console.log("store.getState() : ", store.getState());
 
 // state = updateState(state, incAction(2));
