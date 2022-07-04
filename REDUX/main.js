@@ -59,6 +59,26 @@ const changeNameAction = (name) => ({ type: CHANGE_NAME, payload: name });
 dispatch(incAction(5));
 dispatch(decAction(24));
 dispatch(changeNameAction("Will Smith"));
+
+// test in JSBIN
+// function App() {
+//   const state = store.getState();
+
+//   const el = document.getElementById("name");
+// const btn = document.getElementById("button");
+
+// btn.addEventListener("click", () => {
+//   dispatch(changeNameAction(Math.random().toString(36).slice(-8)));
+// });
+// store.subscribe(()=>{
+//     el.innerText = store.getState().name
+// })
+//   el.innerText = state.name;
+//   const handleClick = () => {
+//     dispatch(changeNameAction("Will Smith"));
+//   };
+//   console.log("state.name : ", state.name);
+// }
 // console.log("store.getState() : ", store.getState());
 
 // state = updateState(state, incAction(2));
