@@ -4,6 +4,28 @@ const CHANGE_NAME = "CHANGE_NAME";
 
 let state = 0;
 
+class Store {
+  constructor(updateState, state) {
+    this._state = state;
+    this._updateState = updateState;
+    this._callbacks = [];
+  }
+
+  getState = () => this._state;
+  dispatch = (action) => {
+    this._state = this._updateState(this._state, action);
+    this._callbacks.forEach((cb) => cb());
+  };
+  subscribe = (callback) => {
+    this._callbacks.push(callback);
+  };
+}
+
+const initialState = {
+  count: 0,
+  name: "John Doe",
+};
+// Reducer
 const updateState = (state, { type, payload }) => {
   switch (type) {
     case "INC":
@@ -26,28 +48,8 @@ const updateState = (state, { type, payload }) => {
   }
 };
 
-class Store {
-  constructor(updateState, state) {
-    this._state = state;
-    this._updateState = updateState;
-    this._callbacks = [];
-  }
-
-  getState = () => this._state;
-  dispatch = (action) => {
-    this._state = this._updateState(this._state, action);
-    this._callbacks.forEach((cb) => cb());
-  };
-  subscribe = (callback) => {
-    this._callbacks.push(callback);
-  };
-}
-
-const initialState = {
-  count: 0,
-  name: "John Doe",
-};
 const store = new Store(updateState, initialState);
+
 const { dispatch } = store;
 store.subscribe(() => console.log("---subscribe 1", store.getState().count));
 store.subscribe(() => console.log("---subscribe 2", store.getState().name));
