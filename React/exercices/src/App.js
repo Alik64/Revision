@@ -15,11 +15,12 @@ const users = [
 
 function App() {
   const [characters, setCharacters] = useState([]);
-
+  console.table(characters);
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
         "https://triple-triad-game.herokuapp.com/api/v1/characters"
+        // "http://localhost:5001/api/v1/characters"
       );
       console.log(result.data);
       setCharacters(result.data.data);
@@ -40,6 +41,7 @@ function App() {
         {characters.map((char) => (
           <div key={char.id}>
             <div>
+              {char.isLike ? "♥" : "♡"}
               <h1>{char.name}</h1>
               <h3>{char.humanName}</h3>
               <img
