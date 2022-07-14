@@ -16,11 +16,10 @@ import React from "react";
 function Welcome({ primary, user }) {
   return (
     <>
-      {primary ? (
-        <h1>Welcome{user ? ` ${user}` : ""}!</h1>
-      ) : (
-        <h2>Welcome{user ? ` ${user}` : ""}!</h2>
-      )}
+      {primary 
+       ? <h1>Welcome{user ? ` ${user}` : ""}!</h1>
+       : <h2>Welcome{user ? ` ${user}` : ""}!</h2>
+      }
     </>
   );
 }
