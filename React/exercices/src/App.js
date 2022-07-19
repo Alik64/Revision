@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import FocusableInput from "./_TD/FocusableInput";
+import FocusableInput from "./_TD/FocusableInputFunction";
+import GroceryApp from "./_TD/GroceryStore";
 
 // const users = [
 //   { id: 1, firstname: "Alexandre", lastname: "Zegrand" },
@@ -9,26 +10,26 @@ import FocusableInput from "./_TD/FocusableInput";
 //   { id: 3, firstname: "India", lastname: "Loulou" },
 // ];
 
-const users = [
-  { firstName: "Ada", lastName: "Lovelace" },
-  { firstName: "Donald", lastName: "Knuth" },
-];
+// const users = [
+//   { firstName: "Ada", lastName: "Lovelace" },
+//   { firstName: "Donald", lastName: "Knuth" },
+// ];
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-  console.table(characters);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(
-        "https://triple-triad-game.herokuapp.com/api/v1/characters"
-        // "http://localhost:5001/api/v1/characters"
-      );
-      console.log(result.data);
-      setCharacters(result.data.data);
-    };
-    fetchData();
-  }, []);
-  console.log("characters ==>", characters);
+  // const [characters, setCharacters] = useState([]);
+  // console.table(characters);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios.get(
+  //       "https://triple-triad-game.herokuapp.com/api/v1/characters"
+  //       // "http://localhost:5001/api/v1/characters"
+  //     );
+  //     console.log(result.data);
+  //     setCharacters(result.data.data);
+  //   };
+  //   fetchData();
+  // }, []);
+  // console.log("characters ==>", characters);
   // return (
   //   <>
   //     <div
@@ -57,6 +58,14 @@ function App() {
   //     </div>
   //   </>
   // );
-  return <FocusableInput shouldFocus={true} />;
+  // return <FocusableInput shouldFocus={true} />;
+  return (
+    <GroceryApp
+      products={[
+        { name: "Oranges", votes: 0 },
+        { name: "Bananas", votes: 0 },
+      ]}
+    />
+  );
 }
 export default App;
