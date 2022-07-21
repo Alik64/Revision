@@ -4,10 +4,13 @@ import React from "react";
 //   { firstName: "Donald", lastName: "Knuth" },
 // ];
 const ListUsers = ({ users }) => {
+  console.log("users : ", users);
   return (
     <>
-      <div className="user-count"> Users: {!!users ? users.length : 0}</div>
-      {users && (
+      <div className="user-count">
+        Users: {typeof users !== "undefined" ? users.length : 0}
+      </div>
+      {typeof users !== "undefined" && users.length > 0 ? (
         <ul className="user-list">
           {users
             .sort((a, b) =>
@@ -21,7 +24,7 @@ const ListUsers = ({ users }) => {
               );
             })}
         </ul>
-      )}
+      ) : null}
     </>
   );
 };
