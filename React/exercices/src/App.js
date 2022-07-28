@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import "./App.css";
-import FocusableInput from "./_TD/FocusableInputFunction";
-import GroceryApp from "./_TD/GroceryStore";
+
+import ListUsers from "./_CG/ListUsers";
+import QuelHook from "./_CG/QuelHook";
 
 // const users = [
 //   { id: 1, firstname: "Alexandre", lastname: "Zegrand" },
@@ -59,13 +60,15 @@ function App() {
   //   </>
   // );
   // return <FocusableInput shouldFocus={true} />;
+
+  const users = [
+    { firstName: "Ada", lastName: "Lovelace" },
+    { firstName: "Donald", lastName: "Knuth" },
+  ];
   return (
-    <GroceryApp
-      products={[
-        { name: "Oranges", votes: 0 },
-        { name: "Bananas", votes: 0 },
-      ]}
-    />
+    <>
+      <QuelHook />
+    </>
   );
 }
 export default App;

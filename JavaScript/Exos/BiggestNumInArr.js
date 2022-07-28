@@ -7,5 +7,5 @@ let largest = arr.reduce((a, b) => {
 console.log(largest)
 
 var myArray = [1, 5, 6, 2, 3];
-var m = Math.max(myArray);
+var m = Math.max(...myArray);
 console.log(m)
