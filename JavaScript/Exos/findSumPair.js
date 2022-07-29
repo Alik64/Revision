@@ -7,5 +7,8 @@ function findSumPair(numbers) {
       }
     }
   }
+  if (typeof newTab[0] === "undefined" || typeof newTab[1] === "undefined") {
+    newTab = [0, 0];
+  }
   return newTab;
 }

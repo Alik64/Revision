@@ -20,3 +20,17 @@ function closestToZero(numbers) {
 
   return closest;
 }
+
+function computeClosestToZero(numbers) {
+  if (!numbers.length) return 0;
+
+  let closest = Math.max(...numbers);
+  for (let i = 0; i < numbers.length; i++) {
+    if (Math.abs(numbers[i]) < Math.abs(closest)) {
+      closest = numbers[i];
+    } else if (Math.abs(numbers[i]) === Math.abs(closest)) {
+      if (numbers[i] > closest) closest = numbers[i];
+    }
+  }
+  return closest;
+}
