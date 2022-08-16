@@ -1,18 +1,23 @@
 // https://www.geeksforgeeks.org/find-number-perfect-squares-two-given-numbers/
 
-const A = parseInt(readline());
-const B = parseInt(readline());
+// const A = parseInt(readline());
+// const B = parseInt(readline());
 
 function countSquares(a, b) {
   let cnt = 0;
 
-  // Traverse through all numbers
   for (let i = a; i <= b; i++)
-    // Check if current number
-    // 'i' is perfect square
-    for (let j = 1; j * j <= i; j++) if (j * j == i) cnt++;
+    for (let j = 1; j * j <= i; j++) {
+      if (j * j == i) {
+        cnt++;
+      }
+    }
 
   return cnt;
 }
-
-console.log(countSquares(A, B));
+// 2nd solution
+function countSquares2(a, b) {
+  return Math.floor(Math.sqrt(b)) - Math.ceil(Math.sqrt(a)) + 1;
+}
+console.log(countSquares(1, 5));
+console.log(countSquares2(1, 10));
