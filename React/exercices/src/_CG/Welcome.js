@@ -14,14 +14,12 @@ import React from "react";
 // }
 
 function Welcome({ primary, user }) {
+  const CustomTag = `h${primary ? 1 : 2}`;
+
   return (
-    <h2>
-      {primary ? (
-        <h1>Welcome{user ? ` ${user}` : ""}!</h1>
-      ) : (
-        <h2>Welcome{user ? ` ${user}` : ""}!</h2>
-      )}
-    </h2>
+    <>
+      <CustomTag>Welcome{user ? ` ${user}` : ""}!</CustomTag>
+    </>
   );
 }
 export default Welcome;

@@ -5,6 +5,7 @@ import ContainerComponent from "./SOF/ContainerComponent";
 
 import ListUsers from "./_CG/ListUsers";
 import QuelHook from "./_CG/QuelHook";
+import Welcome from "./_CG/Welcome";
 
 // const users = [
 //   { id: 1, firstname: "Alexandre", lastname: "Zegrand" },
@@ -68,7 +69,7 @@ function App() {
   ];
   return (
     <>
-      <ContainerComponent />
+      <Welcome primary />
     </>
   );
 }
