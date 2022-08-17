@@ -16,11 +16,7 @@ import React from "react";
 function Welcome({ primary, user }) {
   const CustomTag = `h${primary ? 1 : 2}`;
 
-  return (
-    <>
-      <CustomTag>Welcome{user ? ` ${user}` : ""}!</CustomTag>
-    </>
-  );
+  return <CustomTag>Welcome{user ? ` ${user}` : ""}!</CustomTag>;
 }
 export default Welcome;
 
