@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.16;
 
-contract ZombiFactory {}
+contract ZombieFactory {
+    uint256 dnaDigits = 16;
+}
