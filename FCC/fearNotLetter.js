@@ -10,7 +10,15 @@ Waiting:fearNotLetter("abcdefghijklmnopqrstuvwxyz") should return undefined.
 */
 
 function fearNotLetter(str) {
-  console.log(str.charAt(0));
+  console.log(str.charCodeAt(0));
+  for (let i = 0; i < str.length; i++) {
+    let charCode = str.charCodeAt(i);
+
+    if (charCode !== str.charCodeAt(0) + i) {
+      return String.fromCharCode(charCode - 1);
+    }
+  }
+  return undefined;
 }
 
 console.log(fearNotLetter("abce")); //d
