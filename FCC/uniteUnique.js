@@ -11,8 +11,10 @@ Check the assertion tests for examples.
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
 */
 
-// function uniteUnique(arr) {
-//   return [...new Set([...arguments].flat())];
-// }
+function uniteUnique(arr) {
+  return [...new Set([...arguments].flat())];
+}
+
 const uniteUnique = (...arr) => [...new Set(arr.flat())];
+
 console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
