@@ -21,9 +21,27 @@ console.log(x);
 console.log(0.1 + 0.2 - 0.2 == 0.1); // 
 */
 
-function f1(a, b) {
-  console.log(a, b);
-}
-let f2 = f1.bind(null, "foo");
+// function f1(a, b) {
+//   console.log(a, b);
+// }
+// let f2 = f1.bind(null, "foo");
 
-f2("bar", "baz");
+// f2("bar", "baz");
+for (var i = 0; i < 10; i++) {
+  (function () {
+    let j = i;
+    setTimeout(function () {
+      console.log(j);
+    }, 0);
+  })();
+}
+
+for (var i = 0; i < 10; i++) {
+  setTimeout(
+    function (j) {
+      console.log(j);
+    },
+    0,
+    i
+  );
+}
