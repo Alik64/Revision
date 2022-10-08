@@ -1,0 +1,69 @@
+.metamaskRoot {
+  .buttonContainer {
+    button {
+      all: unset;
+      width: 250px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      span {
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(#6db0ac),
+          to(#4164fd)
+        );
+        background-image: -o-linear-gradient(left, #6db0ac, #4164fd);
+        background-image: linear-gradient(to right, #6db0ac, #4164fd);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: bold;
+        &:hover {
+          background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#4164fd),
+            to(#6db0ac)
+          );
+          background-image: -o-linear-gradient(left, #4164fd, #6db0ac);
+          background-image: linear-gradient(to right, #4164fd, #6db0ac);
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .infoContainer {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+
+    button {
+      all: unset;
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      color: #4164fd;
+      cursor: pointer;
+      &:hover {
+        color: #001880;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .metamaskRoot {
+    display: none;
+  }
+}
