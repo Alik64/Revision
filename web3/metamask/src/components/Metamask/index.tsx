@@ -14,6 +14,7 @@ const Metamask: React.FC = () => {
   const [accountBalance, setAccountBalance] = useState<string | null>(null);
 
   const { ethereum } = window;
+  console.dir(ethereum.selectedAddress);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const Metamask: React.FC = () => {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-      console.log(accounts);
+
       let balance = await provider.getBalance(accounts[0]);
       let bal = ethers.utils.formatEther(balance);
       setEthereumAccount(accounts[0]);
