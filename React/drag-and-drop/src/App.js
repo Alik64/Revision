@@ -11,7 +11,7 @@ const App = () => {
     const tasks = column.tasksId.map((taskId) => state.tasks[taskId]);
     return <Column key={column.id} column={column} tasks={tasks} />;
   });
-  console.log("heheh");
+
   return <div>{columns}</div>;
 };
 

@@ -1,0 +1,27 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.column_container {
+    margin: 8px;
+    border: 1px solid blue;
+    border-radius: 2px;
+}
+
+.column_title {
+    padding: 8px;
+}
+
+.taskList {
+    padding: 8px;
+
+}
+
+.task_container {
+    border: 1px solid violet;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}

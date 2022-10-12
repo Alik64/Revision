@@ -1,10 +1,14 @@
+import Task from "./Task";
+
 const Column = ({ column, tasks }) => {
   return (
-    <div>
-      <h1>{column.title}</h1>
-      {tasks.map((task) => (
-        <div key={task.id}>{task.content}</div>
-      ))}
+    <div className="column_container">
+      <h3 className="column_title">{column.title}</h3>
+      <div className="taskList">
+        {tasks.map((task) => (
+          <Task key={task.id} task={task.content} />
+        ))}
+      </div>
     </div>
   );
 };
