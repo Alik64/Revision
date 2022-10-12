@@ -1,18 +1,22 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import initialData from "./initial-data";
 import Column from "./Column";
 
 const App = () => {
-  const [state, setState] = useState(initialData);
-
-  const columns = state.columnOrder.map((columnId) => {
-    const column = state.columns[columnId];
-    const tasks = column.tasksId.map((taskId) => state.tasks[taskId]);
+  const columns = initialData.columnOrder.map((columnId) => {
+    const column = initialData.columns[columnId];
+    const tasks = column.tasksId.map((taskId) => initialData.tasks[taskId]);
     return <Column key={column.id} column={column} tasks={tasks} />;
   });
-
-  return <div>{columns}</div>;
+  const onDragEndHandler = (result) => {
+    // TODO :: Reorder our columns
+  };
+  return (
+    <DragDropContext onDragEnd={onDragEndHandler}>
+      <div>{columns}</div>);
+    </DragDropContext>
+  );
 };
 
 export default App;
