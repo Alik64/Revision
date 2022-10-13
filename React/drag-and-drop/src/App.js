@@ -14,7 +14,7 @@ const App = () => {
   };
   return (
     <DragDropContext onDragEnd={onDragEndHandler}>
-      <div>{columns}</div>);
+      <div>{columns}</div>
     </DragDropContext>
   );
 };
