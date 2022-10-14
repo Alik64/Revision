@@ -11,6 +11,7 @@ const App = () => {
     const tasks = column.tasksIds.map((taskId) => state.tasks[taskId]);
     return <Column key={column.id} column={column} tasks={tasks} />;
   });
+
   const onDragEndHandler = (result) => {
     const { destination, source, draggableId } = result;
 
