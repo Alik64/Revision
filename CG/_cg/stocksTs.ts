@@ -19,7 +19,7 @@ function stocksRankTs(stocks: string[], prices: number[][]): string[] {
       priceByStock.push(arr[i]);
     });
   }
-
+  console.log(priceByStock);
   let priceByStockMatrix: number[][] = priceByStock.reduce(
     (rows, key, index) => {
       return (
@@ -31,7 +31,7 @@ function stocksRankTs(stocks: string[], prices: number[][]): string[] {
     []
   );
 
-  let averageArr = priceByStockMatrix.map((arr) => average(arr, arr.length));
+  let averageArr = priceByStockMatrix.map((arr) => averageTs(arr, arr.length));
 
   stocks.forEach((element, index) => {
     stocksObj[element] = averageArr[index];
@@ -52,4 +52,4 @@ let pricesTs = [
   [11.53, 10.67, 10.42, 11.88, 11.77, 10.21, 20],
 ];
 
-console.log(stocksRank(stocksTs, pricesTs));
+console.log(stocksRankTs(stocksTs, pricesTs));
