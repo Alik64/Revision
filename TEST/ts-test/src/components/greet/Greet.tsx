@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Greet = () => {
+const Greet = () => {
   return <div>Hello</div>;
 };
+
+export default Greet;
