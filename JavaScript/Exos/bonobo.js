@@ -28,18 +28,18 @@ Example     Input      Output
 //   return count;
 // }
 
-// function repeatLetters(str) {
-//   let result = "";
-//   for (let i = 0; i < str.length; i++) {
-//     result += str[i];
-//     for (let j = 0; j < i; j++) {
-//       if (str[i] === str[j]) {
-//         result += str[i];
-//       }
-//     }
-//   }
-//   return result;
-// }
+function repeatLetters(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    result += str[i];
+    for (let j = 0; j < i; j++) {
+      if (str[i] === str[j]) {
+        result += str[i];
+      }
+    }
+  }
+  return result;
+}
 
 const s = (s) => s.replace((n = /./g), (c) => c.repeat((n[c] = -~n[c])));
 let str = "bonobo";

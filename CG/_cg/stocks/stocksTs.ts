@@ -32,4 +32,4 @@ let pricesTs = [
   [11.53, 10.67, 10.42, 11.88, 11.77, 10.21],
 ];
 
-console.log(stocksRank(stocksTs, pricesTs));
+console.log(stocksRankTs(stocksTs, pricesTs));
