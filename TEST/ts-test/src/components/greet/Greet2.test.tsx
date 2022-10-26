@@ -4,13 +4,13 @@ import Greet2 from "./Greet2";
 /* Greet2 should render the text hello and if is passed into component it should render hello
 followed by the name*/
 
-describe("Greed2 component", () => {
+describe("Greed2", () => {
   test("should renders corectly", () => {
     render(<Greet2 />);
     const textEl = screen.getByText("Hello");
     expect(textEl).toBeInTheDocument();
   });
-  test("renders wiith a name", () => {
+  test("renders with a name", () => {
     render(<Greet2 name="Joe" />);
     const textEl = screen.getByText("Hello Joe");
     expect(textEl).toBeInTheDocument();
