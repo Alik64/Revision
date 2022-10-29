@@ -23,14 +23,15 @@ describe("Application", () => {
     });
     expect(nameElement).toBeInTheDocument();
 
-    const bioElement = screen.getByRole("textbox", {
-      name: "Bio",
-    });
+    const bioElement = screen.getByLabelText("Bio");
     expect(bioElement).toBeInTheDocument();
+
     const jobLocationEl = screen.getByRole("combobox");
     expect(jobLocationEl).toBeInTheDocument();
 
-    const termsEl = screen.getByRole("checkbox");
+    const termsEl = screen.getByLabelText(
+      "I agree to the terms and conditions"
+    );
     expect(termsEl).toBeInTheDocument();
 
     const submitBtnEl = screen.getByRole("button");
