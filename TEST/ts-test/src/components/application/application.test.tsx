@@ -47,5 +47,8 @@ describe("Application", () => {
 
     const submitBtnEl = screen.getByRole("button");
     expect(submitBtnEl).toBeInTheDocument();
+
+    const elephImg = screen.getByAltText("elephant");
+    expect(elephImg).toBeInTheDocument();
   });
 });

@@ -7,6 +7,10 @@ export const Application = () => {
       <h2>Section 1</h2>
       <h3>Section 2</h3>
       <p>Hello world</p>
+      <img
+        src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+        alt="elephant"
+      />
       <form>
         <div>
           <label htmlFor="name">Name</label>
