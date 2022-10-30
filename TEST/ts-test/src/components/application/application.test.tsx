@@ -50,5 +50,11 @@ describe("Application", () => {
 
     const elephImg = screen.getByAltText("elephant");
     expect(elephImg).toBeInTheDocument();
+
+    const closeEl = screen.getByTitle("close");
+    expect(closeEl).toBeInTheDocument();
+
+    const dataEl = screen.getByTestId("data");
+    expect(dataEl).toBeInTheDocument();
   });
 });
