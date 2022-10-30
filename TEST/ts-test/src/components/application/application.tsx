@@ -6,10 +6,17 @@ export const Application = () => {
       <h1>Job APplicaiton form</h1>
       <h2>Section 1</h2>
       <h3>Section 2</h3>
+      <p>Hello world</p>
       <form>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" placeholder="Fullname" />
+          <input
+            type="text"
+            id="name"
+            placeholder="Fullname"
+            value="John Doe"
+            onChange={() => {}}
+          />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
