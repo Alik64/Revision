@@ -17,6 +17,9 @@ describe("Application", () => {
       level: 3,
     });
     expect(sectionHeading3).toBeInTheDocument();
+    const fullNameEl = screen.getByPlaceholderText("Fullname");
+
+    expect(fullNameEl).toBeInTheDocument();
 
     const nameElement = screen.getByRole("textbox", {
       name: "Name",
