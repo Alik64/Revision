@@ -5,6 +5,7 @@ describe("Application", () => {
   test("renders corectly", () => {
     render(<Application />);
     //-----------------       1 getByRole()
+
     const pageHeading = screen.getByRole("heading", {
       level: 1,
     });
