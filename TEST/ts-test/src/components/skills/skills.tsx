@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 type SkillsProps = {
   skills: string[];
 };
 
 export const Skills: React.FC<SkillsProps> = ({ skills }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
   return (
     <>
       <ul>
@@ -12,6 +14,12 @@ export const Skills: React.FC<SkillsProps> = ({ skills }) => {
           <li key={skill}>{skill}</li>
         ))}
       </ul>
+
+      {isLoggedIn ? (
+        <button>Start learning</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+      )}
     </>
   );
 };
