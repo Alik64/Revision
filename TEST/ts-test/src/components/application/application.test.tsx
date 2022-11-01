@@ -49,7 +49,9 @@ describe("Application", () => {
 
     //-----------------       4 getByText()
 
-    const helloWorldP = screen.getByText("Hello world");
+    // const helloWorldP = screen.getByText("Hello world"); // full string match
+    // const helloWorldP = screen.getByText("llo world", { exact: false }); // substring match
+    const helloWorldP = screen.getByText("hello world", { exact: false }); // ignore case
     expect(helloWorldP).toBeInTheDocument();
 
     //-----------------       5 getByDisplayValue()
