@@ -6,6 +6,7 @@ import ClickMe from "./_CG/ClickMe";
 
 import ListUsers from "./_CG/ListUsers";
 import QuelHook from "./_CG/QuelHook";
+import UserContextComp from "./_CG/UserContextComp";
 import Welcome from "./_CG/Welcome";
 
 // const users = [
@@ -71,7 +72,8 @@ function App() {
   return (
     <>
       {/* <Welcome primary /> */}
-      <ClickMe value={1} />
+      {/* <ClickMe value={1} /> */}
+      <UserContextComp />
     </>
   );
 }
