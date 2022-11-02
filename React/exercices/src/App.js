@@ -5,6 +5,7 @@ import ContainerComponent from "./SOF/ContainerComponent";
 import ClickMe from "./_CG/ClickMe";
 
 import ListUsers from "./_CG/ListUsers";
+import PreviewClock from "./_CG/PreviewClock";
 import QuelHook from "./_CG/QuelHook";
 import UserContextComp from "./_CG/UserContextComp";
 import Welcome from "./_CG/Welcome";
@@ -73,7 +74,8 @@ function App() {
     <>
       {/* <Welcome primary /> */}
       {/* <ClickMe value={1} /> */}
-      <UserContextComp />
+      {/* <UserContextComp /> */}
+      <PreviewClock />
     </>
   );
 }
