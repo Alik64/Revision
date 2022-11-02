@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./App.css";
 import ContainerComponent from "./SOF/ContainerComponent";
+import ClickMe from "./_CG/ClickMe";
 
 import ListUsers from "./_CG/ListUsers";
 import QuelHook from "./_CG/QuelHook";
@@ -63,13 +64,14 @@ function App() {
   // );
   // return <FocusableInput shouldFocus={true} />;
 
-  const users = [
-    { firstName: "Ada", lastName: "Lovelace" },
-    { firstName: "Donald", lastName: "Knuth" },
-  ];
+  // const users = [
+  //   { firstName: "Ada", lastName: "Lovelace" },
+  //   { firstName: "Donald", lastName: "Knuth" },
+  // ];
   return (
     <>
-      <Welcome primary />
+      {/* <Welcome primary /> */}
+      <ClickMe value={1} />
     </>
   );
 }
