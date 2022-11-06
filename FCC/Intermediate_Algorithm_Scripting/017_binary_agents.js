@@ -6,7 +6,7 @@
 
 function binaryAgent(str) {
   return String.fromCharCode(
-    ...str.split(" ").map(function (char) {
+    ...str.split(" ").map((char) => {
       return parseInt(char, 2);
     })
   );
