@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type SkillsProps = {
   skills: string[];
@@ -6,6 +6,12 @@ type SkillsProps = {
 
 export const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoggedIn(true);
+    }, 1001);
+  }, []);
 
   return (
     <>
