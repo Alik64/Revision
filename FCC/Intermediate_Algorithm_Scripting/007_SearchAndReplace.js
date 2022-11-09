@@ -12,20 +12,19 @@
 // Solution
 
 function myReplace(str, before, after) {
+  if (after[0].toUpperCase() === before[0]) {
+    after[0].toUpperCase();
+    console.log(after);
+  }
+  let arr = str.split(" "); // [A quick brown fox jumped over the lazy dog]
 
-    if (after[0].toUpperCase() === before[0]) {
-        after[0].toUpperCase()
-        console.log(after)
-    }
-    let arr = str.split(' '); // [A quick brown fox jumped over the lazy dog]
+  let index = arr.indexOf(before); // 4
 
-    let index = arr.indexOf(before); // 4
+  arr.splice(index, 1, after);
 
-    arr.splice(index, 1, after)
-
-    return arr.join(' ')
-
-
+  return arr.join(" ");
 }
 
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "Jumped", "leaped"));
+console.log(
+  myReplace("A quick brown fox jumped over the lazy dog", "Jumped", "leaped")
+);

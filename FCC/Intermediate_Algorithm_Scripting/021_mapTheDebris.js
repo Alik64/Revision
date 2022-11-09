@@ -8,6 +8,7 @@ a  is the orbit's semi-major axis
 μ=GM  is the standard gravitational parameter
 G  is the gravitational constant,
 M  is the mass of the more massive body.
+
 Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
 
 The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
