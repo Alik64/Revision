@@ -13,7 +13,9 @@ function ProductList() {
           <h1>{p.name}</h1>
         </Link>
       ))}
-
+      <Link href="/products/4" replace>
+        <h1>Product 4 with replace prop</h1>
+      </Link>
       <hr />
       <Link href="/">back to Home page</Link>
     </>
