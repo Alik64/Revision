@@ -1,5 +1,5 @@
 function factorial(n) {
-  // if (n < 0) return "Argument must be a positive number";
+  if (n < 0) return "Argument must be a positive number";
   if (n === 0) {
     return 1;
   } else {
