@@ -29,12 +29,25 @@ contract CarShop {
         return shopAddress.balance;
     }
 
+    function withdrawAll() public {
+        require(
+            owner == msg.sender && fullyPaid && shopAddress.balance > 0,
+            "Rejected"
+        );
+
+        address payable receiver = payable(msg.sender);
+        receiver.transfer(shopAddress.balance);
+    }
+
     receive() external payable {
         //address: 0xf8e81D47203A594245E36C48e151709F0C19fBe8
-        require(buyers[msg.sender] && msg.value <= price && !fullyPaid, 'Rejected');
+        require(
+            buyers[msg.sender] && msg.value <= price && !fullyPaid,
+            "Rejected"
+        );
 
-        if(shopAddress.balance == price){
-            fullyPaid = true
+        if (shopAddress.balance == price) {
+            fullyPaid = true;
         }
     }
 }
