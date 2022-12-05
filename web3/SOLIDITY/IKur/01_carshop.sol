@@ -9,6 +9,8 @@ contract CarShop {
     address public shopAddress;
     bool fullyPaid; // false
 
+    event ItemFullyPAid(uint256 _price, address _shopAddress);
+
     constructor() {
         owner = msg.sender;
         shopAddress = address(this);
@@ -48,6 +50,8 @@ contract CarShop {
 
         if (shopAddress.balance == price) {
             fullyPaid = true;
+
+            emit ItemFullyPAid(price, shopAddress);
         }
     }
 }
