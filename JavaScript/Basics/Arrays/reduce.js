@@ -27,7 +27,9 @@ const people = [
 
 const result = people.reduce((groupedPeople, person) => {
   const age = person.age;
-  if (groupedPeople[age] == null) groupedPeople[age] = [];
+  if (groupedPeople[age] == null) {
+    groupedPeople[age] = [];
+  }
   groupedPeople[age].push(person);
   return groupedPeople;
 }, {});
