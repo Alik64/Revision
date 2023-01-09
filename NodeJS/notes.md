@@ -8,3 +8,13 @@ Memory Heap => Where the memory allocations happens. Place to store and run info
 ## Stack Overflow
 
 When maximum call stack size exceeded
+
+## Garbage Collection
+
+Remove unlinked data from Memory heap
+
+## Memory leaks
+
+- Global Variables
+- EventListeners
+- setInterval()
