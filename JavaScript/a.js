@@ -1,14 +1,16 @@
 const WIDTH = process.argv[2];
-const HEIGTH = process.argv[3];
-const heightLimit = HEIGTH - 1; // 2
+const HEIGHT = process.argv[3];
+const heightLimit = HEIGHT - 1; // 2
 const widthLimit = WIDTH - 1; // 4
 const BAR = "-";
 const PILE = "|";
 const CORNER = "o";
 const SPACE = " ";
 
-console.log("width:", WIDTH, "height:", HEIGTH);
-
+console.log("width:", WIDTH, "height:", HEIGHT);
+if (WIDTH <= 0 || HEIGHT <= 0) {
+  console.log("Number should be positive ");
+}
 for (let i = 0; i <= heightLimit; i++) {
   let line = [];
   for (let j = 0; j <= widthLimit; j++) {
