@@ -6,4 +6,5 @@ function fetchData(url, data) {
   return response.read();
 }
 
-fetchData("https://www.google.com", "hello world mf!");
+const receivedData = fetchData("https://www.google.com", "hello world mf!");
+console.log(receivedData);
