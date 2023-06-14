@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jeu de Tic-Tac-Toe</title>
+    <style>
+      canvas {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Jeu de Tic-Tac-Toe</h1>
+    <canvas id="ticTacToeCanvas" width="360" height="360"></canvas>
+
+    <script>
+      // Définition des formes du Tic-Tac-Toe
+      const shapes = [
+        [
+          [20, 20],
+          [100, 20],
+          [100, 100],
+          [20, 100],
+        ], // Croix
+        [
+          [20, 20],
+          [100, 20],
+          [100, 100],
+          [20, 100],
+          [60, 60],
+        ], // Cercle
+      ];
+
+      // Création de la grille
+      const grid = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+
+      // Variable pour suivre le joueur actuel
+      let currentPlayer = 1;
+
+      // Fonction pour dessiner le Tic-Tac-Toe
+      function drawTicTacToe() {
+        const canvas = document.getElementById("ticTacToeCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < grid.length; i++) {
+          for (let j = 0; j < grid[i].length; j++) {
+            if (grid[i][j] !== 0) {
+              const shape = shapes[grid[i][j] - 1];
+              ctx.beginPath();
+              ctx.moveTo(shape[0][0] + j * 120, shape[0][1] + i * 120);
+              for (let k = 1; k < shape.length; k++) {
+                ctx.lineTo(shape[k][0] + j * 120, shape[k][1] + i * 120);
+              }
+              ctx.closePath();
+              ctx.strokeStyle = "#000";
+              ctx.lineWidth = 5;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      // Fonction pour détecter le clic sur la grille
+      function handleClick(event) {
+        const canvas = document.getElementById("ticTacToeCanvas");
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const gridX = Math.floor(x / 120);
+        const gridY = Math.floor(y / 120);
+
+        if (
+          gridX >= 0 &&
+          gridX < grid[0].length &&
+          gridY >= 0 &&
+          gridY < grid.length &&
+          grid[gridY][gridX] === 0
+        ) {
+          grid[gridY][gridX] = currentPlayer;
+          currentPlayer = currentPlayer === 1 ? 2 : 1;
+          drawTicTacToe();
+        }
+      }
+
+      // Initialisation du jeu
+      function init() {
+        const canvas = document.getElementById("ticTacToeCanvas");
+        canvas.addEventListener("click", handleClick);
+        drawTicTacToe();
+      }
+
+      init();
+    </script>
+  </body>
+</html>
