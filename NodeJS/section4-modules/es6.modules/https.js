@@ -1,5 +1,5 @@
-const { read } = require("./response");
-const { send } = require("./request");
+import { send } from "./request.mjs";
+import { read } from "./response.mjs";
 
 function fetchData(url, data) {
   send(url, data);
@@ -8,4 +8,3 @@ function fetchData(url, data) {
 
 const receivedData = fetchData("https://www.google.com", "hello world mf!");
 console.log(receivedData);
-console.log(require.cache);

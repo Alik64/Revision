@@ -8,3 +8,4 @@ function send(url, data) {
 }
 
 module.exports = { send };
+console.log("hello world from Request.js");
