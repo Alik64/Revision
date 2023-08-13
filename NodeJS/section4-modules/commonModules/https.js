@@ -1,10 +1,8 @@
-const internals = require("./internals");
-// const { read } = require("./internals/response");
-// const { send } = require("./internals/request");
+const { read, send } = require("./internals");
 
 function fetchData(url, data) {
-  internals.request.send(url, data);
-  return internals.response.read();
+  send(url, data);
+  return read();
 }
 
 const receivedData = fetchData("https://www.google.com", "hello world mf!");

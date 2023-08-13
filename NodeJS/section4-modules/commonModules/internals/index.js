@@ -1,4 +1,6 @@
+const request = require("./request.js");
+const response = require("./response.js");
 module.exports = {
-  request: require("./request.js"),
-  response: require("./response.js"),
+  send: request.send,
+  read: response.read,
 };
