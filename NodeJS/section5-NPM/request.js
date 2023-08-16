@@ -1,11 +1,10 @@
-function encrypt(data) {
-  return "encrypted data";
-}
+const axios = require("axios");
 
-function send(url, data) {
-  const encryptedData = encrypt(data);
-  console.log(`Sending ${encryptedData} to ${url}`);
-}
-
-module.exports = { send };
-console.log("hello world from Request.js");
+axios
+  .get("https://www.google.com")
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
