@@ -5,6 +5,7 @@
   "main": "https.js",
   "scripts": {
     "start": "node request.js",
+    "dev": "nodemon request.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
