@@ -1,26 +1,24 @@
-//Primitive DATA TYPES
+const playSong = (artistName: string, year: number) => {
+  return `${artistName} was released in the year ${year}`;
+};
 
-const playSong = (artistName, year) => {
-    return `${artistName} was released in the year ${year}`;
-  };
-  
-  const artistName = 'Frank Zappa';
-  
-  const age = 52;
-  
-  interface Musician {
-    artistName: string;
-  
-    // add the rest
-  }
-  
-  const musicianInfo = ({ artistName, age, deceased }) => {
-    return `${artistName}, age ${age}${deceased ? ' (deceased)' : ''}`;
-  };
-  
-  musicianInfo({
-    artistName,
-    age,
-    deceased: true,
-  });
-  
+const artistName: string = "Frank Zappa";
+
+const age: number = 52;
+
+interface Musician {
+  artistName: string;
+  age: number;
+  deceased: boolean;
+  // add the rest
+}
+
+const musicianInfo = ({ artistName, age, deceased }: Musician) => {
+  return `${artistName}, age ${age}${deceased ? " (deceased)" : ""}`;
+};
+
+musicianInfo({
+  artistName,
+  age,
+  deceased: true,
+});
