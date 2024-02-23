@@ -1,4 +1,4 @@
-function findSumPair(numbers) {
+function findSumPair(numbers,k) {
   let newTab = [];
   for (let i = 0; i < numbers.length; i++) {
     for (let j = i; j < numbers.length; j++) {
