@@ -12,3 +12,14 @@ function findSumPair(numbers) {
   }
   return newTab;
 }
+
+function findSumPair(numbers, k) {
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] == k) {
+        return [i, j]; // Retourne immédiatement les indices de la première paire trouvée
+      }
+    }
+  }
+  return [0, 0]; // Retourne [0, 0] si aucune paire n'est trouvée
+}
