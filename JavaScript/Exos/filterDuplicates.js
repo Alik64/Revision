@@ -11,3 +11,7 @@ function filterDuplicates(data) {
     return filteredArray;
   }
   
+  function filterDuplicates(data) {
+    let newData = [...new Set(data)];
+    return newData;
+  }
