@@ -26,3 +26,7 @@ We check if length of uniqueNums array is more then 2. If it's true, it means nu
 
 return uniqueNums.length > 2 ? "Number is not DuoDigit" : "Number is DuoDigit!"
 */
+function isDuoDigit(number) {
+  const uniqueDigits = new Set(String(Math.abs(number)).split(''));
+  return uniqueDigits.size <= 2 ? 'y' : 'n';
+}
