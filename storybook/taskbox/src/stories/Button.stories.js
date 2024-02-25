@@ -37,3 +37,9 @@ export const Small = {
     label: 'Button',
   },
 };
+export const Medium = {
+  args: {
+    size: 'medium',
+    label: 'Button',
+  },
+};
