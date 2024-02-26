@@ -1,5 +1,5 @@
 function ResultDisplayer({ getNewResult }) {
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(null);
   function handleClick() {
     setResult(getNewResult());
   }
@@ -8,7 +8,7 @@ function ResultDisplayer({ getNewResult }) {
       <button id="button" onClick={handleClick}>
         Click
       </button>
-      {result != null && <span id="result">{result}</span>}
+      {result !== null && <span id="result">{result}</span>}
     </div>
   );
 }
