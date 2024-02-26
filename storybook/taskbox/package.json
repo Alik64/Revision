@@ -26,20 +26,20 @@
     "init-msw": "msw init public/"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.6",
-    "@storybook/addon-interactions": "^7.6.6",
-    "@storybook/addon-links": "^7.6.6",
-    "@storybook/blocks": "^7.6.6",
-    "@storybook/react": "^7.6.6",
-    "@storybook/react-vite": "^7.6.6",
-    "@storybook/test": "^7.6.6",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/react-vite": "^7.6.17",
+    "@storybook/test": "^7.6.17",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "msw": "^1.2.1",
     "msw-storybook-addon": "^1.10.0",
     "prop-types": "^15.8.1",
-    "storybook": "^7.6.6",
+    "storybook": "^7.6.17",
     "vite": "^4.2.0"
   },
   "resolutions": {
