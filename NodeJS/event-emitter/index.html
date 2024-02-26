@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Chat</title>
+  </head>
+  <body>
+    <div id="app">
+      <form id="login">
+        <input type="text" name="username" placeholder="What is your name?" />
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="chat-container" inert>
+        <div class="header">
+          <div>
+            <button id="sign-out">Sign out</button>
+          </div>
+        </div>
+
+        <div class="messages">
+          <div class="message own">"Hello, how are you ?"</div>
+          <div class="message other">"I'm fine and you ?"</div>
+          <div class="message own">"I'm doing well!"</div>
+        </div>
+
+        <form class="input-container">
+          <input type="text" name="message" id="'messageInput" placeholder="Type a message..." />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
