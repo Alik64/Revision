@@ -1,9 +1,15 @@
+import { useFormStatus } from "react-dom";
 
-import {useFormStatus} from 'react-dom';
-function Nineteen() {
+function DesignButton({ title }: { title: string }) {
+  const { pending } = useFormStatus();
   return (
-    <div>Nineteen</div>
-  )
+    <button type="submit" disabled={pending}>
+      {title}
+    </button>
+  );
+}
+function Nineteen() {
+  return <DesignButton title="Submit" />;
 }
 
-export default Nineteen
+export default Nineteen;
