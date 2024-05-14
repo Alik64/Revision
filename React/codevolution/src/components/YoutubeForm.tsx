@@ -42,6 +42,17 @@ export const YoutubeForm = () => {
                   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                 message: "Invalid email format",
               },
+              validate: {
+                notAdmin: (value) => {
+                  return value !== "admin" || "not allowed";
+                },
+                notBlackListed: (value) => {
+                  return (
+                    !value.endsWith("example.com") ||
+                    "This domain is not supported"
+                  );
+                },
+              },
             })}
             id="email"
           />
