@@ -5,6 +5,10 @@ type FormValues = {
   username: string;
   email: string;
   channel: string;
+  social: {
+    facebook: string;
+    twitter: string;
+  };
 };
 export const YoutubeForm = () => {
   const { register, control, handleSubmit, formState, reset } =
@@ -13,6 +17,10 @@ export const YoutubeForm = () => {
         username: "React",
         email: "",
         channel: "",
+        social: {
+          facebook: "",
+          twitter: "",
+        },
       },
     });
   const { errors } = formState;
@@ -73,7 +81,14 @@ export const YoutubeForm = () => {
           />
           <p className="error">{errors.channel?.message}</p>
         </div>
-
+        <div className="form-control">
+          <label htmlFor="facebook">Facebook</label>
+          <input type="text" {...register("social.facebook")} id="facebook" />
+        </div>
+        <div className="form-control">
+          <label htmlFor="twitter">Twitter</label>
+          <input type="text" {...register("social.twitter")} id="twitter" />
+        </div>
         <button type="submit">Submit</button>
       </form>
       <DevTool control={control} />
