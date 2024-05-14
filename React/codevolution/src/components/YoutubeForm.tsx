@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, useFieldArray } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 type FormValues = {
@@ -10,6 +10,7 @@ type FormValues = {
     twitter: string;
   };
   phoneNumbers: string[];
+  phNumbers: { number: string }[];
 };
 export const YoutubeForm = () => {
   const { register, control, handleSubmit, formState, reset } =
@@ -23,9 +24,15 @@ export const YoutubeForm = () => {
           twitter: "",
         },
         phoneNumbers: [],
+        phNumbers: [{ number: "" }],
       },
     });
   const { errors } = formState;
+
+  const { fields, append, remove } = useFieldArray({
+    name: "phNumbers",
+    control,
+  });
   const onSubmit = (data: FormValues) => {
     console.log("Form state:", data);
     reset();
@@ -113,6 +120,27 @@ export const YoutubeForm = () => {
             {...register("phoneNumbers.1")}
             id="secondary-phone"
           />
+        </div>
+        <div>
+          <label>List of phone numbers</label>
+          {fields.map((item, index) => {
+            return (
+              <div className="form-control" key={item.id}>
+                <input
+                  type="text"
+                  {...register(`phNumbers.${index}.number` as const)}
+                />
+                {index > 0 && (
+                  <button type="button" onClick={() => remove(index)}>
+                    Remove
+                  </button>
+                )}
+              </div>
+            );
+          })}
+          <button type="button" onClick={() => append({ number: "" })}>
+            Add
+          </button>
         </div>
         <button type="submit">Submit</button>
       </form>
