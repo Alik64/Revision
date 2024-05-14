@@ -9,6 +9,7 @@ type FormValues = {
     facebook: string;
     twitter: string;
   };
+  phoneNumbers: string[];
 };
 export const YoutubeForm = () => {
   const { register, control, handleSubmit, formState, reset } =
@@ -16,11 +17,12 @@ export const YoutubeForm = () => {
       defaultValues: {
         username: "React",
         email: "",
-        channel: "",
+        channel: "Hook Form",
         social: {
           facebook: "",
           twitter: "",
         },
+        phoneNumbers: [],
       },
     });
   const { errors } = formState;
@@ -88,6 +90,23 @@ export const YoutubeForm = () => {
         <div className="form-control">
           <label htmlFor="twitter">Twitter</label>
           <input type="text" {...register("social.twitter")} id="twitter" />
+        </div>
+        <div className="form-control">
+          <label htmlFor="primary-phone">Primary phone number</label>
+          <input
+            type="text"
+            {...register("phoneNumbers.0")}
+            id="primary-phone"
+          />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="secondary-phone">Secondary phone number</label>
+          <input
+            type="text"
+            {...register("phoneNumbers.1")}
+            id="secondary-phone"
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
