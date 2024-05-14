@@ -8,7 +8,13 @@ type FormValues = {
 };
 export const YoutubeForm = () => {
   const { register, control, handleSubmit, formState, reset } =
-    useForm<FormValues>();
+    useForm<FormValues>({
+      defaultValues: {
+        username: "React",
+        email: "",
+        channel: "",
+      },
+    });
   const { errors } = formState;
   const onSubmit = (data: FormValues) => {
     console.log("Form state:", data);
