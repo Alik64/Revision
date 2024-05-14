@@ -95,9 +95,15 @@ export const YoutubeForm = () => {
           <label htmlFor="primary-phone">Primary phone number</label>
           <input
             type="text"
-            {...register("phoneNumbers.0")}
+            {...register("phoneNumbers.0", {
+              required: {
+                value: true,
+                message: "Phone number is required",
+              },
+            })}
             id="primary-phone"
           />
+          <p className="error">{errors.phoneNumbers?.[0]?.message}</p>
         </div>
 
         <div className="form-control">
