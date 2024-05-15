@@ -1,6 +1,6 @@
 import { useForm, useFieldArray, FieldErrors } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-
+import { useEffect } from "react";
 type FormValues = {
   username: string;
   email: string;
@@ -58,7 +58,6 @@ export const YoutubeForm = () => {
   });
   const onSubmit = (data: FormValues) => {
     console.log("Form state:", data);
-    reset();
   };
   const watchUserName = watch("username");
   const handleGetValues = () => {
@@ -73,10 +72,17 @@ export const YoutubeForm = () => {
   };
   const onError = (errors: FieldErrors<FormValues>) =>
     console.log("err:", errors);
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
+
   renderCount++;
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
+    <div style={{ display: "flex" }}>
+      <div>
         <h1>Youtube form</h1>
         <p style={{ color: isSubmitted ? "green" : "inherit" }}>
           <strong>isSubmitted</strong>
@@ -93,7 +99,8 @@ export const YoutubeForm = () => {
         <p style={{ color: isDirty ? "green" : "inherit" }}>
           <strong>isDirty</strong>
         </p>
-
+      </div>
+      <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
         <h2>Render Count: {renderCount / 2}</h2>
         <h2>Watched username: {watchUserName}</h2>
         <div className="form-control">
@@ -242,6 +249,9 @@ export const YoutubeForm = () => {
         </button>
         <button type="button" onClick={handleSetValue}>
           Set value
+        </button>
+        <button type="button" onClick={() => reset()}>
+          Reset
         </button>
       </form>
       <DevTool control={control} />
