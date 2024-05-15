@@ -14,8 +14,9 @@ type FormValues = {
   age: number;
   dob: Date;
 };
+let renderCount = 0;
 export const YoutubeForm = () => {
-  const { register, control, handleSubmit, formState, reset } =
+  const { register, control, handleSubmit, formState, reset, watch } =
     useForm<FormValues>({
       defaultValues: {
         username: "React",
@@ -41,10 +42,14 @@ export const YoutubeForm = () => {
     console.log("Form state:", data);
     reset();
   };
+  const watchUserName = watch("username");
+  renderCount++;
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <h1>Youtube form</h1>
+        <h2>Render Count: {renderCount / 2}</h2>
+        <h2>Watched username: {watchUserName}</h2>
         <div className="form-control">
           <label htmlFor="username">Username</label>
           <input
