@@ -11,6 +11,8 @@ type FormValues = {
   };
   phoneNumbers: string[];
   phNumbers: { number: string }[];
+  age: number;
+  dob: Date;
 };
 export const YoutubeForm = () => {
   const { register, control, handleSubmit, formState, reset } =
@@ -25,6 +27,8 @@ export const YoutubeForm = () => {
         },
         phoneNumbers: [],
         phNumbers: [{ number: "" }],
+        age: 0,
+        dob: new Date(),
       },
     });
   const { errors } = formState;
@@ -41,7 +45,7 @@ export const YoutubeForm = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <h1>Youtube form</h1>
-        <div>
+        <div className="form-control">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -121,7 +125,7 @@ export const YoutubeForm = () => {
             id="secondary-phone"
           />
         </div>
-        <div>
+        <div className="form-control">
           <label>List of phone numbers</label>
           {fields.map((item, index) => {
             return (
@@ -141,6 +145,36 @@ export const YoutubeForm = () => {
           <button type="button" onClick={() => append({ number: "" })}>
             Add
           </button>
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="age">Age</label>
+          <input
+            type="number"
+            {...register(
+              "age",
+
+              { required: "Age is required", valueAsNumber: true }
+            )}
+            id="age"
+          />
+          <p className="error">{errors.age?.message}</p>
+        </div>
+        <div className="form-control">
+          <label htmlFor="dob">Date of birth</label>
+          <input
+            type="date"
+            {...register(
+              "dob",
+
+              {
+                required: { value: true, message: "Date of birth is required" },
+                valueAsDate: true,
+              }
+            )}
+            id="dob"
+          />
+          <p className="error">{errors.dob?.message}</p>
         </div>
         <button type="submit">Submit</button>
       </form>
