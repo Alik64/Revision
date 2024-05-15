@@ -16,22 +16,30 @@ type FormValues = {
 };
 let renderCount = 0;
 export const YoutubeForm = () => {
-  const { register, control, handleSubmit, formState, reset, watch } =
-    useForm<FormValues>({
-      defaultValues: {
-        username: "React",
-        email: "",
-        channel: "Hook Form",
-        social: {
-          facebook: "",
-          twitter: "",
-        },
-        phoneNumbers: [],
-        phNumbers: [{ number: "" }],
-        age: 0,
-        dob: new Date(),
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState,
+    reset,
+    watch,
+    getValues,
+    setValue,
+  } = useForm<FormValues>({
+    defaultValues: {
+      username: "React",
+      email: "",
+      channel: "Hook Form",
+      social: {
+        facebook: "",
+        twitter: "",
       },
-    });
+      phoneNumbers: [],
+      phNumbers: [{ number: "" }],
+      age: 0,
+      dob: new Date(),
+    },
+  });
   const { errors } = formState;
 
   const { fields, append, remove } = useFieldArray({
@@ -43,6 +51,16 @@ export const YoutubeForm = () => {
     reset();
   };
   const watchUserName = watch("username");
+  const handleGetValues = () => {
+    console.log("Get values:", getValues());
+  };
+  const handleSetValue = () => {
+    setValue("username", "Next.js", {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
   renderCount++;
   return (
     <div>
@@ -182,6 +200,12 @@ export const YoutubeForm = () => {
           <p className="error">{errors.dob?.message}</p>
         </div>
         <button type="submit">Submit</button>
+        <button type="button" onClick={handleGetValues}>
+          Get values
+        </button>
+        <button type="button" onClick={handleSetValue}>
+          Set value
+        </button>
       </form>
       <DevTool control={control} />
     </div>
