@@ -34,14 +34,24 @@ export const YoutubeForm = () => {
         facebook: "",
         twitter: "",
       },
-      phoneNumbers: [],
+      phoneNumbers: [""],
       phNumbers: [{ number: "" }],
       age: 0,
       dob: new Date(),
     },
   });
-  const { errors, touchedFields, dirtyFields, isDirty, isValid } = formState;
-  console.log({ errors, touchedFields, dirtyFields, isDirty, isValid });
+  const {
+    errors,
+    touchedFields,
+    dirtyFields,
+    isDirty,
+    isValid,
+    isSubmitting,
+    isSubmitted,
+    isSubmitSuccessful,
+  } = formState;
+  // console.log({ errors, touchedFields, dirtyFields, isDirty, isValid });
+
   const { fields, append, remove } = useFieldArray({
     name: "phNumbers",
     control,
@@ -68,6 +78,22 @@ export const YoutubeForm = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
         <h1>Youtube form</h1>
+        <p style={{ color: isSubmitted ? "green" : "inherit" }}>
+          <strong>isSubmitted</strong>
+        </p>
+        <p style={{ color: isSubmitting ? "green" : "inherit" }}>
+          <strong>isSubmitting</strong>
+        </p>
+        <p style={{ color: isSubmitSuccessful ? "green" : "inherit" }}>
+          <strong>isSubmitSuccessful</strong>
+        </p>
+        <p style={{ color: isValid ? "green" : "inherit" }}>
+          <strong>isValid</strong>
+        </p>
+        <p style={{ color: isDirty ? "green" : "inherit" }}>
+          <strong>isDirty</strong>
+        </p>
+
         <h2>Render Count: {renderCount / 2}</h2>
         <h2>Watched username: {watchUserName}</h2>
         <div className="form-control">
@@ -129,7 +155,7 @@ export const YoutubeForm = () => {
             type="text"
             {...register("social.twitter", {
               disabled: watch("channel") === "",
-              required: { value: true, message: "Twitter is required" },
+              required: { value: false, message: "Twitter is required" },
             })}
             id="twitter"
           />
@@ -192,7 +218,7 @@ export const YoutubeForm = () => {
           />
           <p className="error">{errors.age?.message}</p>
         </div>
-        <div className="form-control">
+        {/* <div className="form-control">
           <label htmlFor="dob">Date of birth</label>
           <input
             type="date"
@@ -207,8 +233,8 @@ export const YoutubeForm = () => {
             id="dob"
           />
           <p className="error">{errors.dob?.message}</p>
-        </div>
-        <button type="submit" disabled={!isValid || !isDirty}>
+        </div> */}
+        <button type="submit" disabled={!isValid || !isDirty || isSubmitting}>
           Submit
         </button>
         <button type="button" onClick={handleGetValues}>
