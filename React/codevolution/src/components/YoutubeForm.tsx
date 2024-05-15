@@ -40,8 +40,8 @@ export const YoutubeForm = () => {
       dob: new Date(),
     },
   });
-  const { errors } = formState;
-
+  const { errors, touchedFields, dirtyFields, isDirty } = formState;
+  console.log({ errors, touchedFields, dirtyFields, isDirty });
   const { fields, append, remove } = useFieldArray({
     name: "phNumbers",
     control,
@@ -123,7 +123,15 @@ export const YoutubeForm = () => {
         </div>
         <div className="form-control">
           <label htmlFor="twitter">Twitter</label>
-          <input type="text" {...register("social.twitter")} id="twitter" />
+          <input
+            type="text"
+            {...(register("social.twitter"),
+            {
+              disabled: watch("channel") === "",
+              required: "Twitter is required",
+            })}
+            id="twitter"
+          />
         </div>
         <div className="form-control">
           <label htmlFor="primary-phone">Primary phone number</label>
