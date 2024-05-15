@@ -1,4 +1,4 @@
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, FieldErrors } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 type FormValues = {
@@ -40,8 +40,8 @@ export const YoutubeForm = () => {
       dob: new Date(),
     },
   });
-  const { errors, touchedFields, dirtyFields, isDirty } = formState;
-  console.log({ errors, touchedFields, dirtyFields, isDirty });
+  const { errors, touchedFields, dirtyFields, isDirty, isValid } = formState;
+  console.log({ errors, touchedFields, dirtyFields, isDirty, isValid });
   const { fields, append, remove } = useFieldArray({
     name: "phNumbers",
     control,
@@ -61,10 +61,12 @@ export const YoutubeForm = () => {
       shouldValidate: true,
     });
   };
+  const onError = (errors: FieldErrors<FormValues>) =>
+    console.log("err:", errors);
   renderCount++;
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
         <h1>Youtube form</h1>
         <h2>Render Count: {renderCount / 2}</h2>
         <h2>Watched username: {watchUserName}</h2>
@@ -125,10 +127,9 @@ export const YoutubeForm = () => {
           <label htmlFor="twitter">Twitter</label>
           <input
             type="text"
-            {...(register("social.twitter"),
-            {
+            {...register("social.twitter", {
               disabled: watch("channel") === "",
-              required: "Twitter is required",
+              required: { value: true, message: "Twitter is required" },
             })}
             id="twitter"
           />
@@ -207,7 +208,9 @@ export const YoutubeForm = () => {
           />
           <p className="error">{errors.dob?.message}</p>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={!isValid || !isDirty}>
+          Submit
+        </button>
         <button type="button" onClick={handleGetValues}>
           Get values
         </button>
