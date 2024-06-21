@@ -16,6 +16,4 @@ def get_entrance_and_floor(apartment_number):
 test_apartment_numbers = [1, 5, 21, 81, 85, 100]
 for apt_num in test_apartment_numbers:
     entry, floor = get_entrance_and_floor(apt_num)
-    print(f"Apartment {apt_num}: Entrance {entry}, Floor {floor}")
-   
-    
+    print(f"Apartment {apt_num}: Entrance {entry}, Floor {floor}")  
