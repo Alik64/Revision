@@ -10,11 +10,24 @@ export const dataProvider: DataProvider = {
       const data = await response.json();
       return { data };
     } catch (error) {
-      throw new Error("Not implemented");
+      throw new Error("Something went wrong with getOne");
     }
   },
-  update: () => {
-    throw new Error("Not implemented");
+  update: async ({ resource, id, variables }) => {
+    try {
+      const response = await fetch(`${API_URL}/${resource}/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(variables),
+        headers: {
+          "Content-type": "application/json;",
+        },
+      });
+      if (response.status < 200 || response.status > 299) throw response;
+      const data = await response.json();
+      return { data };
+    } catch (error) {
+      throw new Error("Something went wrong with update");
+    }
   },
   getList: () => {
     throw new Error("Not implemented");
