@@ -34,10 +34,4 @@ export const dataProvider: DataProvider = {
     throw new Error("Not implemented");
   },
   getApiUrl: () => API_URL,
-  // Optional methods:
-  // getMany: () => { /* ... */ },
-  // createMany: () => { /* ... */ },
-  // deleteMany: () => { /* ... */ },
-  // updateMany: () => { /* ... */ },
-  // custom: () => { /* ... */ },
 };
