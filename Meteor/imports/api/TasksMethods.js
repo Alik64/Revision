@@ -10,4 +10,11 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  "tasks.updateChecked"({ _id, isChecked }) {
+    TasksCollection.update(_id, {
+      $set: {
+        isChecked,
+      },
+    });
+  },
 });

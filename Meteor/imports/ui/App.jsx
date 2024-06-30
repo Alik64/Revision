@@ -4,6 +4,18 @@ import { Task } from "./Task";
 import { TasksCollection } from "../api/TasksCollection.js";
 import { TaskForm } from "./TaskForm";
 
+const toggleChecked = ({ _id, isChecked }) => {
+  Meteor.call(
+    "tasks.updateChecked",
+    { _id, isChecked: !isChecked },
+    (error) => {
+      if (error) {
+        alert(`Error updating task: ${error.error}`);
+      }
+    }
+  );
+};
+
 export const App = () => {
   const { tasks, isLoading, isError } = useTracker(() => {
     const handle = Meteor.subscribe("tasks");
@@ -30,7 +42,7 @@ export const App = () => {
       <TaskForm />
       <ul>
         {tasks.map((task) => (
-          <Task key={task._id} task={task} />
+          <Task key={task._id} task={task} onCheckboxClick={toggleChecked} />
         ))}
       </ul>
     </div>
