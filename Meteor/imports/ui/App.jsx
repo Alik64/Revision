@@ -49,14 +49,18 @@ export const App = () => {
       <h1>Welcome to Meteor!</h1>
       <TaskForm />
       <ul>
-        {tasks.map((task) => (
-          <Task
-            key={task._id}
-            task={task}
-            onCheckboxClick={toggleChecked}
-            onDeleteClick={deleteTask}
-          />
-        ))}
+        {tasks.length > 0 ? (
+          tasks.map((task) => (
+            <Task
+              key={task._id}
+              task={task}
+              onCheckboxClick={toggleChecked}
+              onDeleteClick={deleteTask}
+            />
+          ))
+        ) : (
+          <p>No tasks yet.</p>
+        )}
       </ul>
     </div>
   );
