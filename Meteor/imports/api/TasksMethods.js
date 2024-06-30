@@ -17,4 +17,7 @@ Meteor.methods({
       },
     });
   },
+  "tasks.remove"(_id) {
+    TasksCollection.remove(_id);
+  },
 });

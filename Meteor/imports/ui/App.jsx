@@ -16,6 +16,14 @@ const toggleChecked = ({ _id, isChecked }) => {
   );
 };
 
+const deleteTask = ({ _id }) => {
+  Meteor.call("tasks.remove", _id, (error) => {
+    if (error) {
+      alert(`Error deleting task: ${error.error}`);
+    }
+  });
+};
+
 export const App = () => {
   const { tasks, isLoading, isError } = useTracker(() => {
     const handle = Meteor.subscribe("tasks");
@@ -42,7 +50,12 @@ export const App = () => {
       <TaskForm />
       <ul>
         {tasks.map((task) => (
-          <Task key={task._id} task={task} onCheckboxClick={toggleChecked} />
+          <Task
+            key={task._id}
+            task={task}
+            onCheckboxClick={toggleChecked}
+            onDeleteClick={deleteTask}
+          />
         ))}
       </ul>
     </div>
