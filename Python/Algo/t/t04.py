@@ -1,3 +1,4 @@
+# Créez un programme qui affiche si un nombre est pair ou impair
 import sys
 
 # Vérifier qu'un argument a été passé
