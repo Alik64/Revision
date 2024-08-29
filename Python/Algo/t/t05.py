@@ -1,3 +1,4 @@
+#Créez un programme qui affiche le résultat et le reste d’une division entre deux nombres.
 import sys
 
 # Vérifier qu'exactement deux arguments ont été passés
