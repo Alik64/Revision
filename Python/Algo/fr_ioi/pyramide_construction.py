@@ -8,3 +8,12 @@
 n = 9 #nombre de chiffre impaire de 1 à 17
 sum_of_cubes = n**2 * (2 * n**2 - 1)
 print(sum_of_cubes)
+
+#solution site:
+
+nbCubes = 0
+largeurArête = 1
+for loop in range(9):
+   nbCubes = nbCubes + largeurArête * largeurArête * largeurArête
+   largeurArête = largeurArête + 2
+print(nbCubes)
