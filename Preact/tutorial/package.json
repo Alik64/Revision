@@ -1,0 +1,18 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"htm": "^3.1.1",
+		"preact": "^10.26.9",
+		"preact-iso": "^2.11.1"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "^2.10.2",
+		"vite": "^7.0.4"
+	}
+}
