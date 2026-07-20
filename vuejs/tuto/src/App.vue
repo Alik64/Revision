@@ -1,6 +1,8 @@
 <template>
   <h1>Bonjour {{ firstName.toUpperCase() }}</h1>
-  <p>Count: {{ count }}</p>
+  <p v-bind:id="count">Count: {{ count }}</p>
+  <p :id="count+1">Count id dynamique: {{ count+1 }}</p>
+  <p :class="{ active: count >= 5 }">Active</p>
 
   <!-- <div v-show="count>=5">Bravo vous avez cliqué plus de 5 fois</div> -->
   <div v-if="count>=5">Bravo vous avez cliqué plus de 5 fois</div>
@@ -20,3 +22,9 @@ const decrement = () => {
   count.value--;
 };
 </script>
+
+<style scoped>
+.active {
+  color: red;
+}
+</style>
