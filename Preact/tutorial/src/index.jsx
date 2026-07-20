@@ -3,9 +3,10 @@ import { LocationProvider, Router, Route } from 'preact-iso';
 
 import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
-import { Tuto } from './pages/Tuto/index.jsx';
+
 import { NotFound } from './pages/_404.jsx';
 import './style.css';
+import { Tuto } from './pages/Tuto/index.jsx';
 
 export function App() {
 	return (

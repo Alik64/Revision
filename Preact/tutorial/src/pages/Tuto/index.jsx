@@ -1,7 +1,7 @@
 import { html } from 'htm/preact';
 import { useState } from 'preact/hooks';
 
-function Tuto() {
+export function Tuto() {
   const [count, setCount] = useState(0);
   const maybeBig = Math.random() > 0.5 ? 'big' : 'small';
 
@@ -15,4 +15,3 @@ function Tuto() {
   `;
 }
 
-export default Tuto;
