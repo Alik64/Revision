@@ -9,6 +9,10 @@
   <div v-else>Vous n'avez pas cliqué suffisamment</div>
   <button @click="count++">Increment</button>
   <button v-on:click="decrement">Decrement</button>
+  <button @click="sortMovies">Réorganiser</button>
+  <ul>
+    <li v-for="(movie, index) in movies" :key="movie">{{ movie }} <button @click="deleteMovie(movie)">Delete</button></li>
+  </ul>
 </template>
 
 <script setup>
@@ -21,6 +25,17 @@ const increment = () => {
 const decrement = () => {
   count.value--;
 };
+const movies = ref([
+  "The Shawshank Redemption",
+  "The Godfather",
+  "The Dark Knight",
+])
+const deleteMovie = (movie) => {
+  movies.value = movies.value.filter(m => m !== movie);
+}
+const sortMovies = () => {
+  movies.value.sort();
+}
 </script>
 
 <style scoped>
